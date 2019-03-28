@@ -1,0 +1,614 @@
+<!doctype html>
+<html data-n-head-ssr lang="zh-cn" data-n-head="lang">
+  <head data-n-head="">
+    <title data-n-head="true">实时汇率转换 - MikuTools</title><meta data-n-head="true" charset="utf-8"><meta data-n-head="true" data-hid="viewport" name="viewport" content="width=device-width,initial-scale=1"><meta data-n-head="true" data-hid="author" name="author" content="Ice-Hazymoon"><meta data-n-head="true" name="HandheldFriendly" content="true"><meta data-n-head="true" property="og:site_name" content="MikuTools"><meta data-n-head="true" name="mobile-web-app-capable" content="yes"><meta data-n-head="true" name="apple-mobile-web-app-title" content="MikuTools"><meta data-n-head="true" name="apple-mobile-web-app-status-bar-style" content="white"><meta data-n-head="true" name="theme-color" content="#ffffff"><meta data-n-head="true" itemprop="name"><meta data-n-head="true" itemprop="image"><meta data-n-head="true" data-hid="og:type" name="og:type" property="og:type" content="website"><meta data-n-head="true" data-hid="og:title" name="og:title" property="og:title" content="MikuTools"><meta data-n-head="true" data-hid="og:description" name="og:description" property="og:description" content="收集实用的小工具"><meta data-n-head="true" data-hid="keywords" keywords="实时汇率转换,MikuTools,Ice-Hazymoon,在线工具"><meta data-n-head="true" data-hid="description" description="在线实时汇率转换"><link data-n-head="true" rel="shortcut icon" type="image/x-icon" href="/favicon.ico"><link data-n-head="true" rel="manifest" href="/_nuxt/manifest.1a85931c.json"><link data-n-head="true" rel="apple-touch-icon" href="/_nuxt/icons/icon_512.933jzNF3z3N.png" sizes="512x512"><link rel="preload" href="/_nuxt/8bf9876f635cffe7b4ca.js" as="script"><link rel="preload" href="/_nuxt/5cd9b56705104a763463.js" as="script"><link rel="preload" href="/_nuxt/42e12a2f625e2f7e9c36.js" as="script"><link rel="preload" href="/_nuxt/8737579efc79abbbbe6b.js" as="script"><link rel="preload" href="/_nuxt/4d5d1acafbd8cd23e5ef.js" as="script"><style data-vue-ssr-id="2c951650:0 1fb3b925:0 5271d2fe:0 17cfdfa9:0 132df51d:0 a04c6d94:0 58a25fde:0 073ee80a:0 3cc42a9c:0 1562ad8c:0">/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:block}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent}abbr[title]{border-bottom:none;text-decoration:underline;-webkit-text-decoration:underline dotted;text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText;outline:.0625rem dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px;outline-offset:-.125rem}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details{display:block}summary{display:list-item}[hidden],template{display:none}body,html{-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}body{font-family:Source Sans Pro,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;word-spacing:1px;word-spacing:.0625rem;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased}ul{padding-left:1.5625rem}ul li{margin:.3125rem 0}p{line-height:1.5}.viewer-toolbar>ul>li{margin:0}.v-note-help-show{box-sizing:border-box}[type=button]{-webkit-appearance:none}.typo a{color:#00adb5;color:var(--theme);transition:all .35s;text-decoration:none;position:relative;padding-bottom:.125rem;word-wrap:break-word}.typo a:after{content:"";transition:width .35s;right:0;width:0;bottom:0;position:absolute;border-bottom:.0625rem solid #00adb5;border-bottom:.0625rem solid var(--theme)}.typo a:hover:after{left:0;width:100%}.typo p{margin-bottom:1.25rem;line-height:1.7}.typo blockquote{padding-left:1.25rem;border-left:.25rem solid #e2e3e4;margin:1.25rem 0;color:#8a8989}.typo pre{margin:1em 0;padding:.625rem .9375rem;font-size:14px;font-size:.875rem;font-family:Menlo,Monaco,Consolas,Andale Mono,lucida console,Courier New,monospace;background-color:#393e46;overflow-x:auto}.typo pre::-webkit-scrollbar{width:10px;width:.625rem;height:8px;height:.5rem}.typo pre::-webkit-scrollbar-thumb{border-radius:10px;border-radius:.625rem;background-color:#b6b4b4}.typo code{font-family:Menlo,Monaco,Consolas,Andale Mono,lucida console,Courier New,monospace;background-color:#393e46}.typo code,.typo img{border-radius:6px;border-radius:.375rem}.typo img{max-width:100%;margin:.625rem 0}.typo h1,.typo h2,.typo h3,.typo h4,.typo h5,.typo h6{font-weight:400;color:#111;margin:.9375rem 0}.typo h1{font-size:32px;font-size:2rem}.typo h2{font-size:28px;font-size:1.75rem}.typo h3{font-size:24px;font-size:1.5rem}.typo h4{font-size:21px;font-size:1.3125rem}.typo h5{font-size:19px;font-size:1.1875rem}.typo h6{font-size:17px;font-size:1.0625rem}.typo h4,.typo h5,.typo h6{font-weight:700}.typo h4:before,.typo h5:before,.typo h6:before{display:inline-block;width:20px;width:1.25rem;content:"#";color:#aaa}.typo hr{height:10px;height:.625rem;margin-bottom:.75rem;border:none;border-bottom:.0625rem dashed #393e46}.typo ol{padding-left:2em;margin:0 0 1.2em}.typo ol li{list-style:decimal}.typo ul{padding-left:2em;margin:0 0 1.2em;list-style:disc}.typo li{margin-top:.3125rem}.typo li ol,.typo li ul{margin:.8em 0}.typo li ul{list-style:circle}.typo table{color:#5b6064;border-spacing:0;border-radius:6px;border-radius:.375rem;text-align:center;border-collapse:collapse;box-shadow:0 0 0 1px #eee;box-shadow:0 0 0 .0625rem #eee;display:inline-block;max-width:100%;overflow:auto;white-space:nowrap;margin:auto}.typo table::-webkit-scrollbar{width:10px;width:.625rem;height:10px;height:.625rem}.typo table::-webkit-scrollbar-thumb{border-radius:10px;border-radius:.625rem;background-color:#888}.typo table thead{border-bottom:.0625rem solid #eee}.typo table th{padding:.4375rem .875rem;font-weight:400}.typo table td,.typo table th{border-right:.0625rem solid #eee}.typo table td{padding:.5rem .875rem}.typo table td:last-child,.typo table th:last-child{border:none}.typo table tr{background-color:#fff}.typo table tr:nth-child(2n){background-color:#f8f8f8}html{overflow-y:scroll}.v--modal-block-scroll{height:100vh}:root{overflow-y:auto;overflow-x:hidden;--t0:transparent;--theme:#00adb5}@media (max-width:500px){:root{font-size:13px;font-size:.8125rem}}@media (max-width:380px){:root{font-size:12px;font-size:.75rem}}@media (max-width:350px){:root{font-size:10px;font-size:.625rem}}*{-webkit-tap-highlight-color:transparent}body{width:100vw;overflow:hidden}a{color:#0366d6;word-break:break-all;text-decoration:none;cursor:alias}a:hover{text-decoration:underline}pre{margin:.9375rem 0;padding:.625rem .9375rem;line-height:1.5;font-size:14px;font-size:.875rem;font-family:Menlo,Monaco,Consolas,Andale Mono,lucida console,Courier New,monospace;background-color:var(--t1);color:var(--t2);overflow-x:auto}pre::-webkit-scrollbar{width:10px;width:.625rem;height:8px;height:.5rem}pre::-webkit-scrollbar-thumb{background-color:var(--t2)}hr{height:10px;height:.625rem;margin-bottom:.75rem;border:none;border-bottom:.0625rem dashed var(--t1)}.page-enter-active,.page-leave-active{transition:all .25s}.page-enter,.page-leave-to{-webkit-transform:translateY(20px);-webkit-transform:translateY(1.25rem);transform:translateY(20px);transform:translateY(1.25rem);opacity:0}.page-enter-to .page-leave{-webkit-transform:translateY(0);transform:translateY(0);opacity:1}::-webkit-scrollbar{width:8px;width:.5rem;height:10px;height:.625rem}::-webkit-scrollbar-thumb{background-color:var(--t1)}.dark{background-color:var(--t2)}.dark a{color:#4183c4}.dark .vue-dialog .vue-dialog-buttons{border-top:.0625rem solid #616161}.nya-subtitle{display:block;font-size:18px;font-size:1.125rem;margin-bottom:.625rem;font-weight:700}.nya-bg-0{background-color:transparent;background-color:var(--t0)}.nya-bg-1{background-color:var(--t1)}.nya-bg-2{background-color:var(--t2)}.nya-bd-0{border-color:transparent;border-color:var(--t0)}.nya-bd-1{border-color:var(--t1)}.nya-bd-2{border-color:var(--t2)}.nya-co-0{color:transparent;color:var(--t0)}.nya-co-1{color:var(--t1)}.nya-co-2{color:var(--t2)}.vue-dialog{background-color:var(--t2)!important;color:var(--t1)!important;max-width:100%}a.nya-btn{color:var(--t1)}a.nya-btn:hover{text-decoration:none}.nya-btn{display:inline-block;padding:.625rem .9375rem;font-size:18px;font-size:1.125rem;font-weight:700;cursor:pointer;outline:0;border:1px solid;background-color:var(--t2);border:.0625rem solid var(--t1);color:var(--t1)}.nya-btn:active{background-color:var(--t1);color:var(--t2)}.nya-btn[disabled=disabled]{opacity:.8;cursor:no-drop}.nya-list{margin-left:0;padding-left:1.25rem}.nya-list li{margin:.625rem 0;line-height:1.3}.nya-table{border-spacing:0;border-top:.0625rem solid;border-right:.0625rem solid;max-width:100%;margin:auto;border-collapse:collapse;white-space:nowrap;table-layout:fixed;overflow:auto}.nya-table td,.nya-table th{font-size:18px;font-size:1.125rem;border-bottom:.0625rem solid;border-left:.0625rem solid;border-collapse:collapse;padding:.625rem;text-align:left;text-overflow:ellipsis;overflow:hidden}@media (max-width:600px){.nya-table{display:block;white-space:nowrap;overflow:auto}}.inputbtn{display:flex;align-items:flex-end;max-width:100%}.inputbtn .nya-btn,.inputbtn .nya-input{display:inline-block}.inputbtn .nya-input{flex:1;max-width:calc(100% - 120px);max-width:calc(100% - 7.5rem)}.inputbtn .nya-btn{flex:none}.inputbtn button{width:120px;width:7.5rem;border-left:none}.nya-hide-scroll{-ms-overflow-style:none;overflow:-moz-scrollbars-none}.nya-hide-scroll::-webkit-scrollbar{width:0!important}@font-face{font-family:Eva-Icons;src:url(/_nuxt/fonts/f910131.eot);src:url(/_nuxt/fonts/f910131.eot?#iefix) format("embedded-opentype"),url(/_nuxt/fonts/5073ed9.woff2) format("woff2"),url(/_nuxt/fonts/f8715d9.woff) format("woff"),url(/_nuxt/fonts/647aa99.ttf) format("truetype"),url(/_nuxt/img/c409411.svg#Eva-Icons) format("svg");font-style:normal;font-weight:400}.eva{display:inline-block;-webkit-transform:translate(0);transform:translate(0);text-rendering:auto;font:normal normal 400 14px/1 Eva-Icons;font:normal normal 400 .875rem/1 Eva-Icons;font-size:inherit;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased}.eva-lg{vertical-align:-15%;line-height:.75em;font-size:1.33333333em}.eva-2x{font-size:2em}.eva-3x{font-size:3em}.eva-4x{font-size:4em}.eva-5x{font-size:5em}.eva-fw{width:1.28571429em;text-align:center}.eva-activity:before{content:"\ea01"}.eva-activity-outline:before{content:"\ea02"}.eva-alert-circle:before{content:"\ea03"}.eva-alert-circle-outline:before{content:"\ea04"}.eva-alert-triangle:before{content:"\ea05"}.eva-alert-triangle-outline:before{content:"\ea06"}.eva-archive:before{content:"\ea07"}.eva-archive-outline:before{content:"\ea08"}.eva-arrow-back:before{content:"\ea09"}.eva-arrow-back-outline:before{content:"\ea0a"}.eva-arrow-circle-down:before{content:"\ea0b"}.eva-arrow-circle-down-outline:before{content:"\ea0c"}.eva-arrow-circle-left:before{content:"\ea0d"}.eva-arrow-circle-left-outline:before{content:"\ea0e"}.eva-arrow-circle-right:before{content:"\ea0f"}.eva-arrow-circle-right-outline:before{content:"\ea10"}.eva-arrow-circle-up:before{content:"\ea11"}.eva-arrow-circle-up-outline:before{content:"\ea12"}.eva-arrow-down:before{content:"\ea13"}.eva-arrow-down-outline:before{content:"\ea14"}.eva-arrow-downward:before{content:"\ea15"}.eva-arrow-downward-outline:before{content:"\ea16"}.eva-arrow-forward:before{content:"\ea17"}.eva-arrow-forward-outline:before{content:"\ea18"}.eva-arrow-ios-back:before{content:"\ea19"}.eva-arrow-ios-back-outline:before{content:"\ea1a"}.eva-arrow-ios-downward:before{content:"\ea1b"}.eva-arrow-ios-downward-outline:before{content:"\ea1c"}.eva-arrow-ios-forward:before{content:"\ea1d"}.eva-arrow-ios-forward-outline:before{content:"\ea1e"}.eva-arrow-ios-upward:before{content:"\ea1f"}.eva-arrow-ios-upward-outline:before{content:"\ea20"}.eva-arrow-left:before{content:"\ea21"}.eva-arrow-left-outline:before{content:"\ea22"}.eva-arrow-right:before{content:"\ea23"}.eva-arrow-right-outline:before{content:"\ea24"}.eva-arrow-up:before{content:"\ea25"}.eva-arrow-up-outline:before{content:"\ea26"}.eva-arrow-upward:before{content:"\ea27"}.eva-arrow-upward-outline:before{content:"\ea28"}.eva-arrowhead-down:before{content:"\ea29"}.eva-arrowhead-down-outline:before{content:"\ea2a"}.eva-arrowhead-left:before{content:"\ea2b"}.eva-arrowhead-left-outline:before{content:"\ea2c"}.eva-arrowhead-right:before{content:"\ea2d"}.eva-arrowhead-right-outline:before{content:"\ea2e"}.eva-arrowhead-up:before{content:"\ea2f"}.eva-arrowhead-up-outline:before{content:"\ea30"}.eva-at:before{content:"\ea31"}.eva-at-outline:before{content:"\ea32"}.eva-attach:before{content:"\ea33"}.eva-attach-2:before{content:"\ea34"}.eva-attach-2-outline:before{content:"\ea35"}.eva-attach-outline:before{content:"\ea36"}.eva-award:before{content:"\ea37"}.eva-award-outline:before{content:"\ea38"}.eva-backspace:before{content:"\ea39"}.eva-backspace-outline:before{content:"\ea3a"}.eva-bar-chart:before{content:"\ea3b"}.eva-bar-chart-2:before{content:"\ea3c"}.eva-bar-chart-2-outline:before{content:"\ea3d"}.eva-bar-chart-outline:before{content:"\ea3e"}.eva-battery:before{content:"\ea3f"}.eva-battery-outline:before{content:"\ea40"}.eva-behance:before{content:"\ea41"}.eva-behance-outline:before{content:"\ea42"}.eva-bell:before{content:"\ea43"}.eva-bell-off:before{content:"\ea44"}.eva-bell-off-outline:before{content:"\ea45"}.eva-bell-outline:before{content:"\ea46"}.eva-bluetooth:before{content:"\ea47"}.eva-bluetooth-outline:before{content:"\ea48"}.eva-book:before{content:"\ea49"}.eva-book-open:before{content:"\ea4a"}.eva-book-open-outline:before{content:"\ea4b"}.eva-book-outline:before{content:"\ea4c"}.eva-bookmark:before{content:"\ea4d"}.eva-bookmark-outline:before{content:"\ea4e"}.eva-briefcase:before{content:"\ea4f"}.eva-briefcase-outline:before{content:"\ea50"}.eva-browser:before{content:"\ea51"}.eva-browser-outline:before{content:"\ea52"}.eva-brush:before{content:"\ea53"}.eva-brush-outline:before{content:"\ea54"}.eva-bulb:before{content:"\ea55"}.eva-bulb-outline:before{content:"\ea56"}.eva-calendar:before{content:"\ea57"}.eva-calendar-outline:before{content:"\ea58"}.eva-camera:before{content:"\ea59"}.eva-camera-outline:before{content:"\ea5a"}.eva-car:before{content:"\ea5b"}.eva-car-outline:before{content:"\ea5c"}.eva-cast:before{content:"\ea5d"}.eva-cast-outline:before{content:"\ea5e"}.eva-charging:before{content:"\ea5f"}.eva-charging-outline:before{content:"\ea60"}.eva-checkmark:before{content:"\ea61"}.eva-checkmark-circle:before{content:"\ea62"}.eva-checkmark-circle-2:before{content:"\ea63"}.eva-checkmark-circle-2-outline:before{content:"\ea64"}.eva-checkmark-circle-outline:before{content:"\ea65"}.eva-checkmark-outline:before{content:"\ea66"}.eva-checkmark-square:before{content:"\ea67"}.eva-checkmark-square-2:before{content:"\ea68"}.eva-checkmark-square-2-outline:before{content:"\ea69"}.eva-checkmark-square-outline:before{content:"\ea6a"}.eva-chevron-down:before{content:"\ea6b"}.eva-chevron-down-outline:before{content:"\ea6c"}.eva-chevron-left:before{content:"\ea6d"}.eva-chevron-left-outline:before{content:"\ea6e"}.eva-chevron-right:before{content:"\ea6f"}.eva-chevron-right-outline:before{content:"\ea70"}.eva-chevron-up:before{content:"\ea71"}.eva-chevron-up-outline:before{content:"\ea72"}.eva-clipboard:before{content:"\ea73"}.eva-clipboard-outline:before{content:"\ea74"}.eva-clock:before{content:"\ea75"}.eva-clock-outline:before{content:"\ea76"}.eva-close:before{content:"\ea77"}.eva-close-circle:before{content:"\ea78"}.eva-close-circle-outline:before{content:"\ea79"}.eva-close-outline:before{content:"\ea7a"}.eva-close-square:before{content:"\ea7b"}.eva-close-square-outline:before{content:"\ea7c"}.eva-cloud-download:before{content:"\ea7d"}.eva-cloud-download-outline:before{content:"\ea7e"}.eva-cloud-upload:before{content:"\ea7f"}.eva-cloud-upload-outline:before{content:"\ea80"}.eva-code:before{content:"\ea81"}.eva-code-download:before{content:"\ea82"}.eva-code-download-outline:before{content:"\ea83"}.eva-code-outline:before{content:"\ea84"}.eva-collapse:before{content:"\ea85"}.eva-collapse-outline:before{content:"\ea86"}.eva-color-palette:before{content:"\ea87"}.eva-color-palette-outline:before{content:"\ea88"}.eva-color-picker:before{content:"\ea89"}.eva-color-picker-outline:before{content:"\ea8a"}.eva-compass:before{content:"\ea8b"}.eva-compass-outline:before{content:"\ea8c"}.eva-copy:before{content:"\ea8d"}.eva-copy-outline:before{content:"\ea8e"}.eva-corner-down-left:before{content:"\ea8f"}.eva-corner-down-left-outline:before{content:"\ea90"}.eva-corner-down-right:before{content:"\ea91"}.eva-corner-down-right-outline:before{content:"\ea92"}.eva-corner-left-down:before{content:"\ea93"}.eva-corner-left-down-outline:before{content:"\ea94"}.eva-corner-left-up:before{content:"\ea95"}.eva-corner-left-up-outline:before{content:"\ea96"}.eva-corner-right-down:before{content:"\ea97"}.eva-corner-right-down-outline:before{content:"\ea98"}.eva-corner-right-up:before{content:"\ea99"}.eva-corner-right-up-outline:before{content:"\ea9a"}.eva-corner-up-left:before{content:"\ea9b"}.eva-corner-up-left-outline:before{content:"\ea9c"}.eva-corner-up-right:before{content:"\ea9d"}.eva-corner-up-right-outline:before{content:"\ea9e"}.eva-credit-card:before{content:"\ea9f"}.eva-credit-card-outline:before{content:"\eaa0"}.eva-crop:before{content:"\eaa1"}.eva-crop-outline:before{content:"\eaa2"}.eva-cube:before{content:"\eaa3"}.eva-cube-outline:before{content:"\eaa4"}.eva-diagonal-arrow-left-down:before{content:"\eaa5"}.eva-diagonal-arrow-left-down-outline:before{content:"\eaa6"}.eva-diagonal-arrow-left-up:before{content:"\eaa7"}.eva-diagonal-arrow-left-up-outline:before{content:"\eaa8"}.eva-diagonal-arrow-right-down:before{content:"\eaa9"}.eva-diagonal-arrow-right-down-outline:before{content:"\eaaa"}.eva-diagonal-arrow-right-up:before{content:"\eaab"}.eva-diagonal-arrow-right-up-outline:before{content:"\eaac"}.eva-done-all:before{content:"\eaad"}.eva-done-all-outline:before{content:"\eaae"}.eva-download:before{content:"\eaaf"}.eva-download-outline:before{content:"\eab0"}.eva-droplet:before{content:"\eab1"}.eva-droplet-off:before{content:"\eab2"}.eva-droplet-off-outline:before{content:"\eab3"}.eva-droplet-outline:before{content:"\eab4"}.eva-edit:before{content:"\eab5"}.eva-edit-2:before{content:"\eab6"}.eva-edit-2-outline:before{content:"\eab7"}.eva-edit-outline:before{content:"\eab8"}.eva-email:before{content:"\eab9"}.eva-email-outline:before{content:"\eaba"}.eva-expand:before{content:"\eabb"}.eva-expand-outline:before{content:"\eabc"}.eva-external-link:before{content:"\eabd"}.eva-external-link-outline:before{content:"\eabe"}.eva-eye:before{content:"\eabf"}.eva-eye-off:before{content:"\eac0"}.eva-eye-off-2:before{content:"\eac1"}.eva-eye-off-2-outline:before{content:"\eac2"}.eva-eye-off-outline:before{content:"\eac3"}.eva-eye-outline:before{content:"\eac4"}.eva-facebook:before{content:"\eac5"}.eva-facebook-outline:before{content:"\eac6"}.eva-file:before{content:"\eac7"}.eva-file-add:before{content:"\eac8"}.eva-file-add-outline:before{content:"\eac9"}.eva-file-outline:before{content:"\eaca"}.eva-file-remove:before{content:"\eacb"}.eva-file-remove-outline:before{content:"\eacc"}.eva-file-text:before{content:"\eacd"}.eva-file-text-outline:before{content:"\eace"}.eva-film:before{content:"\eacf"}.eva-film-outline:before{content:"\ead0"}.eva-flag:before{content:"\ead1"}.eva-flag-outline:before{content:"\ead2"}.eva-flash:before{content:"\ead3"}.eva-flash-off:before{content:"\ead4"}.eva-flash-off-outline:before{content:"\ead5"}.eva-flash-outline:before{content:"\ead6"}.eva-flip:before{content:"\ead7"}.eva-flip-2:before{content:"\ead8"}.eva-flip-2-outline:before{content:"\ead9"}.eva-flip-outline:before{content:"\eada"}.eva-folder:before{content:"\eadb"}.eva-folder-add:before{content:"\eadc"}.eva-folder-add-outline:before{content:"\eadd"}.eva-folder-outline:before{content:"\eade"}.eva-folder-remove:before{content:"\eadf"}.eva-folder-remove-outline:before{content:"\eae0"}.eva-funnel:before{content:"\eae1"}.eva-funnel-outline:before{content:"\eae2"}.eva-gift:before{content:"\eae3"}.eva-gift-outline:before{content:"\eae4"}.eva-github:before{content:"\eae5"}.eva-github-outline:before{content:"\eae6"}.eva-globe:before{content:"\eae7"}.eva-globe-2:before{content:"\eae8"}.eva-globe-2-outline:before{content:"\eae9"}.eva-globe-3:before{content:"\eaea"}.eva-globe-outline:before{content:"\eaeb"}.eva-google:before{content:"\eaec"}.eva-google-outline:before{content:"\eaed"}.eva-grid:before{content:"\eaee"}.eva-grid-outline:before{content:"\eaef"}.eva-hard-drive:before{content:"\eaf0"}.eva-hard-drive-outline:before{content:"\eaf1"}.eva-hash:before{content:"\eaf2"}.eva-hash-outline:before{content:"\eaf3"}.eva-headphones:before{content:"\eaf4"}.eva-headphones-outline:before{content:"\eaf5"}.eva-heart:before{content:"\eaf6"}.eva-heart-outline:before{content:"\eaf7"}.eva-home:before{content:"\eaf8"}.eva-home-outline:before{content:"\eaf9"}.eva-image:before{content:"\eafa"}.eva-image-2:before{content:"\eafb"}.eva-image-outline:before{content:"\eafc"}.eva-inbox:before{content:"\eafd"}.eva-inbox-outline:before{content:"\eafe"}.eva-info:before{content:"\eaff"}.eva-info-outline:before{content:"\eb00"}.eva-keypad:before{content:"\eb01"}.eva-keypad-outline:before{content:"\eb02"}.eva-layers:before{content:"\eb03"}.eva-layers-outline:before{content:"\eb04"}.eva-layout:before{content:"\eb05"}.eva-layout-outline:before{content:"\eb06"}.eva-link:before{content:"\eb07"}.eva-link-2:before{content:"\eb08"}.eva-link-2-outline:before{content:"\eb09"}.eva-link-outline:before{content:"\eb0a"}.eva-linkedin:before{content:"\eb0b"}.eva-linkedin-outline:before{content:"\eb0c"}.eva-list:before{content:"\eb0d"}.eva-list-outline:before{content:"\eb0e"}.eva-loader-outline:before{content:"\eb0f"}.eva-lock:before{content:"\eb10"}.eva-lock-outline:before{content:"\eb11"}.eva-log-in:before{content:"\eb12"}.eva-log-in-outline:before{content:"\eb13"}.eva-log-out:before{content:"\eb14"}.eva-log-out-outline:before{content:"\eb15"}.eva-map:before{content:"\eb16"}.eva-map-outline:before{content:"\eb17"}.eva-maximize:before{content:"\eb18"}.eva-maximize-outline:before{content:"\eb19"}.eva-menu:before{content:"\eb1a"}.eva-menu-2:before{content:"\eb1b"}.eva-menu-2-outline:before{content:"\eb1c"}.eva-menu-arrow:before{content:"\eb1d"}.eva-menu-arrow-outline:before{content:"\eb1e"}.eva-menu-outline:before{content:"\eb1f"}.eva-message-circle:before{content:"\eb20"}.eva-message-circle-outline:before{content:"\eb21"}.eva-message-square:before{content:"\eb22"}.eva-message-square-outline:before{content:"\eb23"}.eva-mic:before{content:"\eb24"}.eva-mic-off:before{content:"\eb25"}.eva-mic-off-outline:before{content:"\eb26"}.eva-mic-outline:before{content:"\eb27"}.eva-minimize:before{content:"\eb28"}.eva-minimize-outline:before{content:"\eb29"}.eva-minus:before{content:"\eb2a"}.eva-minus-circle:before{content:"\eb2b"}.eva-minus-circle-outline:before{content:"\eb2c"}.eva-minus-outline:before{content:"\eb2d"}.eva-minus-square:before{content:"\eb2e"}.eva-minus-square-outline:before{content:"\eb2f"}.eva-monitor:before{content:"\eb30"}.eva-monitor-outline:before{content:"\eb31"}.eva-moon:before{content:"\eb32"}.eva-moon-outline:before{content:"\eb33"}.eva-more-horizontal:before{content:"\eb34"}.eva-more-horizontal-outline:before{content:"\eb35"}.eva-more-vertical:before{content:"\eb36"}.eva-more-vertical-outline:before{content:"\eb37"}.eva-move:before{content:"\eb38"}.eva-move-outline:before{content:"\eb39"}.eva-music:before{content:"\eb3a"}.eva-music-outline:before{content:"\eb3b"}.eva-navigation:before{content:"\eb3c"}.eva-navigation-2:before{content:"\eb3d"}.eva-navigation-2-outline:before{content:"\eb3e"}.eva-navigation-outline:before{content:"\eb3f"}.eva-npm:before{content:"\eb40"}.eva-npm-outline:before{content:"\eb41"}.eva-options:before{content:"\eb42"}.eva-options-2:before{content:"\eb43"}.eva-options-2-outline:before{content:"\eb44"}.eva-options-outline:before{content:"\eb45"}.eva-pantone:before{content:"\eb46"}.eva-pantone-outline:before{content:"\eb47"}.eva-paper-plane:before{content:"\eb48"}.eva-paper-plane-outline:before{content:"\eb49"}.eva-pause-circle:before{content:"\eb4a"}.eva-pause-circle-outline:before{content:"\eb4b"}.eva-people:before{content:"\eb4c"}.eva-people-outline:before{content:"\eb4d"}.eva-percent:before{content:"\eb4e"}.eva-percent-outline:before{content:"\eb4f"}.eva-person:before{content:"\eb50"}.eva-person-add:before{content:"\eb51"}.eva-person-add-outline:before{content:"\eb52"}.eva-person-delete:before{content:"\eb53"}.eva-person-delete-outline:before{content:"\eb54"}.eva-person-done:before{content:"\eb55"}.eva-person-done-outline:before{content:"\eb56"}.eva-person-outline:before{content:"\eb57"}.eva-person-remove:before{content:"\eb58"}.eva-person-remove-outline:before{content:"\eb59"}.eva-phone:before{content:"\eb5a"}.eva-phone-call:before{content:"\eb5b"}.eva-phone-call-outline:before{content:"\eb5c"}.eva-phone-missed:before{content:"\eb5d"}.eva-phone-missed-outline:before{content:"\eb5e"}.eva-phone-off:before{content:"\eb5f"}.eva-phone-off-outline:before{content:"\eb60"}.eva-phone-outline:before{content:"\eb61"}.eva-pie-chart:before{content:"\eb62"}.eva-pie-chart-2:before{content:"\eb63"}.eva-pie-chart-outline:before{content:"\eb64"}.eva-pin:before{content:"\eb65"}.eva-pin-outline:before{content:"\eb66"}.eva-play-circle:before{content:"\eb67"}.eva-play-circle-outline:before{content:"\eb68"}.eva-plus:before{content:"\eb69"}.eva-plus-circle:before{content:"\eb6a"}.eva-plus-circle-outline:before{content:"\eb6b"}.eva-plus-outline:before{content:"\eb6c"}.eva-plus-square:before{content:"\eb6d"}.eva-plus-square-outline:before{content:"\eb6e"}.eva-power:before{content:"\eb6f"}.eva-power-outline:before{content:"\eb70"}.eva-pricetags:before{content:"\eb71"}.eva-pricetags-outline:before{content:"\eb72"}.eva-printer:before{content:"\eb73"}.eva-printer-outline:before{content:"\eb74"}.eva-question-mark:before{content:"\eb75"}.eva-question-mark-circle:before{content:"\eb76"}.eva-question-mark-circle-outline:before{content:"\eb77"}.eva-question-mark-outline:before{content:"\eb78"}.eva-radio:before{content:"\eb79"}.eva-radio-button-off:before{content:"\eb7a"}.eva-radio-button-off-outline:before{content:"\eb7b"}.eva-radio-button-on:before{content:"\eb7c"}.eva-radio-button-on-outline:before{content:"\eb7d"}.eva-radio-outline:before{content:"\eb7e"}.eva-recording:before{content:"\eb7f"}.eva-recording-outline:before{content:"\eb80"}.eva-refresh:before{content:"\eb81"}.eva-refresh-outline:before{content:"\eb82"}.eva-repeat:before{content:"\eb83"}.eva-repeat-outline:before{content:"\eb84"}.eva-rewind-left:before{content:"\eb85"}.eva-rewind-left-outline:before{content:"\eb86"}.eva-rewind-right:before{content:"\eb87"}.eva-rewind-right-outline:before{content:"\eb88"}.eva-save:before{content:"\eb89"}.eva-save-outline:before{content:"\eb8a"}.eva-scissors:before{content:"\eb8b"}.eva-scissors-outline:before{content:"\eb8c"}.eva-search:before{content:"\eb8d"}.eva-search-outline:before{content:"\eb8e"}.eva-settings:before{content:"\eb8f"}.eva-settings-2:before{content:"\eb90"}.eva-settings-2-outline:before{content:"\eb91"}.eva-settings-outline:before{content:"\eb92"}.eva-shake:before{content:"\eb93"}.eva-shake-outline:before{content:"\eb94"}.eva-share:before{content:"\eb95"}.eva-share-outline:before{content:"\eb96"}.eva-shield:before{content:"\eb97"}.eva-shield-off:before{content:"\eb98"}.eva-shield-off-outline:before{content:"\eb99"}.eva-shield-outline:before{content:"\eb9a"}.eva-shopping-bag:before{content:"\eb9b"}.eva-shopping-bag-outline:before{content:"\eb9c"}.eva-shopping-cart:before{content:"\eb9d"}.eva-shopping-cart-outline:before{content:"\eb9e"}.eva-shuffle:before{content:"\eb9f"}.eva-shuffle-2:before{content:"\eba0"}.eva-shuffle-2-outline:before{content:"\eba1"}.eva-shuffle-outline:before{content:"\eba2"}.eva-skip-back:before{content:"\eba3"}.eva-skip-back-outline:before{content:"\eba4"}.eva-skip-forward:before{content:"\eba5"}.eva-skip-forward-outline:before{content:"\eba6"}.eva-slash:before{content:"\eba7"}.eva-slash-outline:before{content:"\eba8"}.eva-smartphone:before{content:"\eba9"}.eva-smartphone-outline:before{content:"\ebaa"}.eva-speaker:before{content:"\ebab"}.eva-speaker-outline:before{content:"\ebac"}.eva-square:before{content:"\ebad"}.eva-square-outline:before{content:"\ebae"}.eva-star:before{content:"\ebaf"}.eva-star-outline:before{content:"\ebb0"}.eva-stop-circle:before{content:"\ebb1"}.eva-stop-circle-outline:before{content:"\ebb2"}.eva-sun:before{content:"\ebb3"}.eva-sun-outline:before{content:"\ebb4"}.eva-swap:before{content:"\ebb5"}.eva-swap-outline:before{content:"\ebb6"}.eva-sync:before{content:"\ebb7"}.eva-sync-outline:before{content:"\ebb8"}.eva-text:before{content:"\ebb9"}.eva-text-outline:before{content:"\ebba"}.eva-thermometer:before{content:"\ebbb"}.eva-thermometer-minus:before{content:"\ebbc"}.eva-thermometer-minus-outline:before{content:"\ebbd"}.eva-thermometer-outline:before{content:"\ebbe"}.eva-thermometer-plus:before{content:"\ebbf"}.eva-thermometer-plus-outline:before{content:"\ebc0"}.eva-toggle-left:before{content:"\ebc1"}.eva-toggle-left-outline:before{content:"\ebc2"}.eva-toggle-right:before{content:"\ebc3"}.eva-toggle-right-outline:before{content:"\ebc4"}.eva-trash:before{content:"\ebc5"}.eva-trash-2:before{content:"\ebc6"}.eva-trash-2-outline:before{content:"\ebc7"}.eva-trash-outline:before{content:"\ebc8"}.eva-trending-down:before{content:"\ebc9"}.eva-trending-down-outline:before{content:"\ebca"}.eva-trending-up:before{content:"\ebcb"}.eva-trending-up-outline:before{content:"\ebcc"}.eva-tv:before{content:"\ebcd"}.eva-tv-outline:before{content:"\ebce"}.eva-twitter:before{content:"\ebcf"}.eva-twitter-outline:before{content:"\ebd0"}.eva-umbrella:before{content:"\ebd1"}.eva-umbrella-outline:before{content:"\ebd2"}.eva-undo:before{content:"\ebd3"}.eva-undo-outline:before{content:"\ebd4"}.eva-unlock:before{content:"\ebd5"}.eva-unlock-outline:before{content:"\ebd6"}.eva-upload:before{content:"\ebd7"}.eva-upload-outline:before{content:"\ebd8"}.eva-video:before{content:"\ebd9"}.eva-video-off:before{content:"\ebda"}.eva-video-off-outline:before{content:"\ebdb"}.eva-video-outline:before{content:"\ebdc"}.eva-volume-down:before{content:"\ebdd"}.eva-volume-down-outline:before{content:"\ebde"}.eva-volume-mute:before{content:"\ebdf"}.eva-volume-mute-outline:before{content:"\ebe0"}.eva-volume-off:before{content:"\ebe1"}.eva-volume-off-outline:before{content:"\ebe2"}.eva-volume-up:before{content:"\ebe3"}.eva-volume-up-outline:before{content:"\ebe4"}.eva-wifi:before{content:"\ebe5"}.eva-wifi-off:before{content:"\ebe6"}.eva-wifi-off-outline:before{content:"\ebe7"}.eva-wifi-outline:before{content:"\ebe8"}.nuxt-progress{position:fixed;top:0;left:0;right:0;height:4px;height:.25rem;width:0;opacity:1;transition:width .1s,opacity .4s;background-color:#00adb5;z-index:999999}.nuxt-progress.nuxt-progress-notransition{transition:none}.nuxt-progress-failed{background-color:red}.index_page main{max-width:1200px;max-width:75rem;margin:0 auto;box-sizing:border-box;padding:0 1.25rem}.index_page .view{margin-top:1.25rem}.navbar h2{font-size:20px;font-size:1.25rem;margin-top:-2.5rem}.navbar button{font-weight:700}.navbar .login-modal{padding:1.875rem;border-radius:4px;border-radius:.25rem;border:.25rem solid;max-width:100%}.navbar .login-modal button{margin-top:.9375rem}.navbar .login-modal .nya-input{display:block;margin-bottom:.625rem}.navbar header{width:100%;height:130px;height:8.125rem;display:flex;align-items:center;justify-content:center;flex-direction:column}.navbar header .title{margin-bottom:.3125rem;display:flex;align-items:center}.navbar header .title,.navbar header .title a{color:var(--t1);cursor:pointer}.navbar header .title a:hover{text-decoration:none}.navbar header .title i{margin-left:.375rem;cursor:pointer}.navbar header .subtitle{display:flex;align-items:center;font-size:18px;font-size:1.125rem;margin-top:.3125rem;opacity:.8}.navbar header .subtitle i{font-size:20px;font-size:1.25rem;margin-right:.3125rem;cursor:pointer}.navbar header .site-info{margin-top:.625rem;color:var(--theme);font-weight:700;line-height:1.5}.exchange_rate .inputbtn{width:100%;display:inline-table}.exchange_rate .inputbtn>div{width:calc(50% - 30px);width:calc(50% - 1.875rem);display:inline-table}.exchange_rate .inputbtn>div:first-child{margin-right:.625rem}.exchange_rate .inputbtn>div:nth-child(2){display:inline-flex;align-items:center;justify-content:center;width:40px;width:2.5rem;height:48px;height:3rem;font-size:35px;font-size:2.1875rem;vertical-align:top}.exchange_rate .inputbtn>div:nth-child(3){margin-left:.625rem}.exchange_rate .inputbtn>div>div{width:50%}.exchange_rate .inputbtn>div>div input{border-right:none}@media (max-width:600px){.exchange_rate .inputbtn>div{width:100%}.exchange_rate .inputbtn>div:first-child{margin-right:0}.exchange_rate .inputbtn>div:nth-child(2){width:100%}.exchange_rate .inputbtn>div:nth-child(3){margin-left:0}}.nya-container{position:relative;padding:2rem 2rem 1.5rem;margin-bottom:2.5rem;border:4px solid;border:.25rem solid var(--t1)}.nya-container h2.nya-title{top:-35px;top:-2.1875rem;display:table;padding:0 .3125rem;background-color:var(--t2);display:flex;align-items:center;position:absolute}.nya-container h2.nya-title i{margin-right:.5rem;font-size:30px;font-size:1.875rem}@media (max-width:600px){.nya-container{padding:1.875rem .9375rem .9375rem;margin-bottom:1.75rem}.nya-container h2.nya-title{top:-36px;top:-2.25rem;padding:0 .3125rem;background-color:var(--t2)}}@media (max-width:350px){.nya-container h2.nya-title{top:-30px;top:-1.875rem}}.nya-input{background-color:var(--t2);display:inline-block}.nya-input label{display:block;font-size:18px;font-size:1.125rem;margin-bottom:.625rem;font-weight:700}.nya-input .input-file,.nya-input input,.nya-input textarea{width:100%;padding:.625rem .9375rem;box-sizing:border-box;font-size:18px;font-size:1.125rem;border:1px solid;background-color:var(--t0);border:.0625rem solid var(--t1);color:var(--t1);outline:0}.nya-input .input-file[disabled=disabled],.nya-input input[disabled=disabled],.nya-input textarea[disabled=disabled]{opacity:.8;cursor:no-drop}.nya-input .input-file label{cursor:pointer;display:flex;align-items:center;box-sizing:border-box;margin-bottom:0}.nya-input .input-file label span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.nya-input .input-file input{display:none}.nya-select{position:relative;display:inline-table}.nya-select .title,.nya-select label{display:block;font-size:18px;font-size:1.125rem;margin-bottom:.625rem;font-weight:700}.nya-select .select{position:relative}.nya-select select{-webkit-appearance:none;-moz-appearance:none;appearance:none;width:100%;padding:.625rem .9375rem;font-size:18px;font-size:1.125rem;font-weight:700;cursor:pointer;outline:0;border:1px solid;background-color:var(--t2);border:.0625rem solid var(--t1);color:var(--t1)}.nya-select i{z-index:1;line-height:18px;line-height:1.125rem;pointer-events:none;position:absolute;right:4px;right:.25rem;bottom:4px;bottom:.25rem;display:flex;align-items:center;padding-right:.4375rem;font-size:25px;font-size:1.5625rem;height:calc(100% - 8px);height:calc(100% - .5rem);box-sizing:border-box;background-color:var(--t2)}</style>
+  </head>
+  <body data-n-head="">
+    <div data-server-rendered="true" id="__nuxt"><!----><div id="__layout"><div class="index_page"><style>:root{--t1:#222831;--t2:#ffffff;color:#222831}</style> <main><div class="navbar"><!----> <header><h1 class="title"><a href="/" class="nuxt-link-active">
+                MikuTools - 工具集合
+            </a> <i class="eva eva-moon-outline"></i></h1> <div class="subtitle"><i class="eva eva-heart-outline"></i>更多工具追加中
+        </div> <div class="site-info">
+            重要通知：本站域名已切换为 <a href="http://miku.tools" target="_blank" rel="noopener noreferrer">miku.tools</a> 请即时更新收藏夹，以免造成无法访问的情况
+        </div></header></div> <div class="exchange_rate view"><section class="nya-container"><h2 class="nya-title"><span>实时汇率换算</span></h2> <div class="inputbtn"><div><div class="nya-input"><!----> <input type="number" placeholder="获取汇率中" autocomplete="off" disabled></div> <div class="nya-select"><!----> <div class="select"><select value="CNY"><option value="CNY">
+                人民币
+            </option><option value="HKD">
+                港元
+            </option><option value="MOP">
+                澳门元
+            </option><option value="TWD">
+                台币
+            </option><option value="EUR">
+                欧元
+            </option><option value="USD">
+                美元
+            </option><option value="GBP">
+                英镑
+            </option><option value="AUD">
+                澳元
+            </option><option value="KRW">
+                韩元
+            </option><option value="JPY">
+                日元
+            </option><option value="CNH">
+                离岸人民币
+            </option><option value="CAD">
+                加拿大元
+            </option><option value="RUB">
+                俄罗斯卢布
+            </option><option value="THB">
+                泰国铢
+            </option><option value="PHP">
+                菲律宾比索
+            </option><option value="ALL">
+                阿尔巴尼亚列克
+            </option><option value="ARS">
+                阿根廷比索
+            </option><option value="AWG">
+                阿鲁巴岛弗罗林
+            </option><option value="AED">
+                阿联酋迪拉姆
+            </option><option value="ANG">
+                列斯荷兰盾
+            </option><option value="AZN">
+                阿塞拜疆新马纳特
+            </option><option value="AOA">
+                安哥拉宽扎
+            </option><option value="BSD">
+                巴哈马元
+            </option><option value="BHD">
+                巴林第纳尔
+            </option><option value="BBD">
+                巴巴多斯元
+            </option><option value="BYR">
+                白俄罗斯卢
+            </option><option value="BZD">
+                伯利兹元
+            </option><option value="BMD">
+                百慕大元
+            </option><option value="BTN">
+                不丹卢比
+            </option><option value="BOB">
+                玻利维亚诺
+            </option><option value="BWP">
+                博茨瓦纳普拉
+            </option><option value="BRL">
+                巴西里亚伊
+            </option><option value="BGN">
+                保加利亚列瓦
+            </option><option value="BIF">
+                布隆迪法郎
+            </option><option value="BDT">
+                孟加拉塔卡
+            </option><option value="BND">
+                文莱元
+            </option><option value="CVE">
+                佛得角埃斯库多
+            </option><option value="COP">
+                哥伦比亚比索
+            </option><option value="CRC">
+                哥斯达黎加科朗
+            </option><option value="CUP">
+                古巴比索
+            </option><option value="CZK">
+                捷克克朗
+            </option><option value="CHF">
+                瑞士法郎
+            </option><option value="CYP">
+                塞浦路斯镑
+            </option><option value="CLP">
+                智利比索
+            </option><option value="DZD">
+                阿尔及利亚第纳尔
+            </option><option value="DKK">
+                丹麦克朗
+            </option><option value="DOP">
+                多米尼加比索
+            </option><option value="DJF">
+                吉布提法郎
+            </option><option value="EGP">
+                埃及镑
+            </option><option value="ETB">
+                埃塞俄比亚比尔
+            </option><option value="ECS">
+                厄瓜多尔苏克雷
+            </option><option value="ERN">
+                厄立特里亚
+            </option><option value="FKP">
+                福克兰群岛镑
+            </option><option value="FJD">
+                斐济元
+            </option><option value="GMD">
+                冈比亚达拉西
+            </option><option value="GYD">
+                圭亚那元
+            </option><option value="GHS">
+                加纳塞地
+            </option><option value="GNF">
+                几内亚法郎
+            </option><option value="GTQ">
+                危地马拉格查尔
+            </option><option value="GIP">
+                直布罗陀镑
+            </option><option value="HTG">
+                海地古德
+            </option><option value="HNL">
+                洪都拉斯伦皮拉
+            </option><option value="HRK">
+                克罗地亚库纳
+            </option><option value="HUF">
+                匈牙利福林
+            </option><option value="ISK">
+                冰岛克朗
+            </option><option value="INR">
+                印度卢比
+            </option><option value="IDR">
+                印度尼西亚卢比盾
+            </option><option value="IRR">
+                伊朗里亚尔
+            </option><option value="IQD">
+                伊拉克第纳尔
+            </option><option value="ILS">
+                以色列镑
+            </option><option value="JMD">
+                牙买加元
+            </option><option value="JOD">
+                约旦第纳尔
+            </option><option value="KPW">
+                朝鲜圆
+            </option><option value="KZT">
+                哈萨克斯坦腾格
+            </option><option value="KHR">
+                柬埔寨利尔斯
+            </option><option value="KYD">
+                开曼岛元
+            </option><option value="KMF">
+                科摩罗法郎
+            </option><option value="KES">
+                肯尼亚先令
+            </option><option value="KWD">
+                科威特第纳尔
+            </option><option value="LAK">
+                老挝基普
+            </option><option value="LVL">
+                拉脱维亚拉图
+            </option><option value="LBP">
+                黎巴嫩镑
+            </option><option value="LSL">
+                莱索托洛提
+            </option><option value="LRD">
+                利比里亚元
+            </option><option value="LYD">
+                利比亚第纳尔
+            </option><option value="LTL">
+                立陶宛里塔斯
+            </option><option value="LKR">
+                斯里兰卡卢比
+            </option><option value="MKD">
+                马其顿第纳尔
+            </option><option value="MWK">
+                马拉维克瓦查
+            </option><option value="MYR">
+                马来西亚林吉特
+            </option><option value="MVR">
+                马尔代夫卢非亚
+            </option><option value="MRO">
+                毛里塔尼亚乌吉亚
+            </option><option value="MUR">
+                毛里求斯卢比
+            </option><option value="MXN">
+                墨西哥比索
+            </option><option value="MDL">
+                摩尔多瓦列伊
+            </option><option value="MNT">
+                蒙古图格里克
+            </option><option value="MAD">
+                摩洛哥道拉姆
+            </option><option value="MMK">
+                缅甸元
+            </option><option value="MGA">
+                马达加斯加阿里亚里
+            </option><option value="NAD">
+                纳米比亚元
+            </option><option value="NPR">
+                尼泊尔卢比
+            </option><option value="NIO">
+                尼加拉瓜科多巴
+            </option><option value="NGN">
+                尼日利亚奈拉
+            </option><option value="NOK">
+                挪威克朗
+            </option><option value="NZD">
+                新西兰元
+            </option><option value="OMR">
+                阿曼里亚尔
+            </option><option value="PKR">
+                巴基斯坦卢比
+            </option><option value="PAB">
+                巴拿马巴尔博亚
+            </option><option value="PGK">
+                巴布亚新几内亚基那
+            </option><option value="PYG">
+                巴拉圭瓜拉尼
+            </option><option value="PLN">
+                波兰兹罗提
+            </option><option value="PEN">
+                秘鲁索尔
+            </option><option value="QAR">
+                卡塔尔利尔
+            </option><option value="RON">
+                罗马尼亚新列伊
+            </option><option value="RWF">
+                卢旺达法郎
+            </option><option value="SEK">
+                瑞典克朗
+            </option><option value="SVC">
+                萨尔瓦多科朗
+            </option><option value="STD">
+                圣多美多布拉
+            </option><option value="SAR">
+                沙特阿拉伯里亚尔
+            </option><option value="SCR">
+                塞舌尔法郎
+            </option><option value="SLL">
+                塞拉利昂利昂
+            </option><option value="SIT">
+                斯洛文尼亚托拉捷夫
+            </option><option value="SBD">
+                所罗门群岛元
+            </option><option value="SOS">
+                索马里先令
+            </option><option value="SHP">
+                圣赫勒拿群岛磅
+            </option><option value="SDG">
+                苏丹第纳尔
+            </option><option value="SZL">
+                斯威士兰里兰吉尼
+            </option><option value="SGD">
+                新加坡元
+            </option><option value="SYP">
+                叙利亚镑
+            </option><option value="TRY">
+                土耳其新里拉
+            </option><option value="TZS">
+                坦桑尼亚先令
+            </option><option value="TOP">
+                汤加潘加
+            </option><option value="TTD">
+                特立尼达和多巴哥元
+            </option><option value="TND">
+                突尼斯第纳尔
+            </option><option value="TJS">
+                塔吉克斯坦索莫尼
+            </option><option value="UAH">
+                乌克兰赫夫米
+            </option><option value="UYU">
+                乌拉圭新比索
+            </option><option value="UGX">
+                乌干达先令
+            </option><option value="VUV">
+                瓦努阿图瓦图
+            </option><option value="VEF">
+                委内瑞拉博利瓦
+            </option><option value="VND">
+                越南盾
+            </option><option value="WST">
+                萨摩亚塔拉
+            </option><option value="XOF">
+                多哥非洲共同体法郎
+            </option><option value="XAF">
+                刚果中非共同体法郎
+            </option><option value="XCD">
+                格林纳达东加勒比元
+            </option><option value="XPF">
+                太平洋法郎
+            </option><option value="YER">
+                也门里亚尔
+            </option><option value="ZWD">
+                津巴布韦元
+            </option><option value="ZAR">
+                南非兰特
+            </option><option value="ZMW">
+                赞比亚克瓦查
+            </option></select> <i class="eva eva-arrow-ios-downward-outline"></i></div></div></div> <div class="eva eva-swap-outline"></div> <div><div class="nya-input"><!----> <input type="number" placeholder="获取汇率中" autocomplete="off" disabled></div> <div class="nya-select"><!----> <div class="select"><select value="USD"><option value="CNY">
+                人民币
+            </option><option value="HKD">
+                港元
+            </option><option value="MOP">
+                澳门元
+            </option><option value="TWD">
+                台币
+            </option><option value="EUR">
+                欧元
+            </option><option value="USD">
+                美元
+            </option><option value="GBP">
+                英镑
+            </option><option value="AUD">
+                澳元
+            </option><option value="KRW">
+                韩元
+            </option><option value="JPY">
+                日元
+            </option><option value="CNH">
+                离岸人民币
+            </option><option value="CAD">
+                加拿大元
+            </option><option value="RUB">
+                俄罗斯卢布
+            </option><option value="THB">
+                泰国铢
+            </option><option value="PHP">
+                菲律宾比索
+            </option><option value="ALL">
+                阿尔巴尼亚列克
+            </option><option value="ARS">
+                阿根廷比索
+            </option><option value="AWG">
+                阿鲁巴岛弗罗林
+            </option><option value="AED">
+                阿联酋迪拉姆
+            </option><option value="ANG">
+                列斯荷兰盾
+            </option><option value="AZN">
+                阿塞拜疆新马纳特
+            </option><option value="AOA">
+                安哥拉宽扎
+            </option><option value="BSD">
+                巴哈马元
+            </option><option value="BHD">
+                巴林第纳尔
+            </option><option value="BBD">
+                巴巴多斯元
+            </option><option value="BYR">
+                白俄罗斯卢
+            </option><option value="BZD">
+                伯利兹元
+            </option><option value="BMD">
+                百慕大元
+            </option><option value="BTN">
+                不丹卢比
+            </option><option value="BOB">
+                玻利维亚诺
+            </option><option value="BWP">
+                博茨瓦纳普拉
+            </option><option value="BRL">
+                巴西里亚伊
+            </option><option value="BGN">
+                保加利亚列瓦
+            </option><option value="BIF">
+                布隆迪法郎
+            </option><option value="BDT">
+                孟加拉塔卡
+            </option><option value="BND">
+                文莱元
+            </option><option value="CVE">
+                佛得角埃斯库多
+            </option><option value="COP">
+                哥伦比亚比索
+            </option><option value="CRC">
+                哥斯达黎加科朗
+            </option><option value="CUP">
+                古巴比索
+            </option><option value="CZK">
+                捷克克朗
+            </option><option value="CHF">
+                瑞士法郎
+            </option><option value="CYP">
+                塞浦路斯镑
+            </option><option value="CLP">
+                智利比索
+            </option><option value="DZD">
+                阿尔及利亚第纳尔
+            </option><option value="DKK">
+                丹麦克朗
+            </option><option value="DOP">
+                多米尼加比索
+            </option><option value="DJF">
+                吉布提法郎
+            </option><option value="EGP">
+                埃及镑
+            </option><option value="ETB">
+                埃塞俄比亚比尔
+            </option><option value="ECS">
+                厄瓜多尔苏克雷
+            </option><option value="ERN">
+                厄立特里亚
+            </option><option value="FKP">
+                福克兰群岛镑
+            </option><option value="FJD">
+                斐济元
+            </option><option value="GMD">
+                冈比亚达拉西
+            </option><option value="GYD">
+                圭亚那元
+            </option><option value="GHS">
+                加纳塞地
+            </option><option value="GNF">
+                几内亚法郎
+            </option><option value="GTQ">
+                危地马拉格查尔
+            </option><option value="GIP">
+                直布罗陀镑
+            </option><option value="HTG">
+                海地古德
+            </option><option value="HNL">
+                洪都拉斯伦皮拉
+            </option><option value="HRK">
+                克罗地亚库纳
+            </option><option value="HUF">
+                匈牙利福林
+            </option><option value="ISK">
+                冰岛克朗
+            </option><option value="INR">
+                印度卢比
+            </option><option value="IDR">
+                印度尼西亚卢比盾
+            </option><option value="IRR">
+                伊朗里亚尔
+            </option><option value="IQD">
+                伊拉克第纳尔
+            </option><option value="ILS">
+                以色列镑
+            </option><option value="JMD">
+                牙买加元
+            </option><option value="JOD">
+                约旦第纳尔
+            </option><option value="KPW">
+                朝鲜圆
+            </option><option value="KZT">
+                哈萨克斯坦腾格
+            </option><option value="KHR">
+                柬埔寨利尔斯
+            </option><option value="KYD">
+                开曼岛元
+            </option><option value="KMF">
+                科摩罗法郎
+            </option><option value="KES">
+                肯尼亚先令
+            </option><option value="KWD">
+                科威特第纳尔
+            </option><option value="LAK">
+                老挝基普
+            </option><option value="LVL">
+                拉脱维亚拉图
+            </option><option value="LBP">
+                黎巴嫩镑
+            </option><option value="LSL">
+                莱索托洛提
+            </option><option value="LRD">
+                利比里亚元
+            </option><option value="LYD">
+                利比亚第纳尔
+            </option><option value="LTL">
+                立陶宛里塔斯
+            </option><option value="LKR">
+                斯里兰卡卢比
+            </option><option value="MKD">
+                马其顿第纳尔
+            </option><option value="MWK">
+                马拉维克瓦查
+            </option><option value="MYR">
+                马来西亚林吉特
+            </option><option value="MVR">
+                马尔代夫卢非亚
+            </option><option value="MRO">
+                毛里塔尼亚乌吉亚
+            </option><option value="MUR">
+                毛里求斯卢比
+            </option><option value="MXN">
+                墨西哥比索
+            </option><option value="MDL">
+                摩尔多瓦列伊
+            </option><option value="MNT">
+                蒙古图格里克
+            </option><option value="MAD">
+                摩洛哥道拉姆
+            </option><option value="MMK">
+                缅甸元
+            </option><option value="MGA">
+                马达加斯加阿里亚里
+            </option><option value="NAD">
+                纳米比亚元
+            </option><option value="NPR">
+                尼泊尔卢比
+            </option><option value="NIO">
+                尼加拉瓜科多巴
+            </option><option value="NGN">
+                尼日利亚奈拉
+            </option><option value="NOK">
+                挪威克朗
+            </option><option value="NZD">
+                新西兰元
+            </option><option value="OMR">
+                阿曼里亚尔
+            </option><option value="PKR">
+                巴基斯坦卢比
+            </option><option value="PAB">
+                巴拿马巴尔博亚
+            </option><option value="PGK">
+                巴布亚新几内亚基那
+            </option><option value="PYG">
+                巴拉圭瓜拉尼
+            </option><option value="PLN">
+                波兰兹罗提
+            </option><option value="PEN">
+                秘鲁索尔
+            </option><option value="QAR">
+                卡塔尔利尔
+            </option><option value="RON">
+                罗马尼亚新列伊
+            </option><option value="RWF">
+                卢旺达法郎
+            </option><option value="SEK">
+                瑞典克朗
+            </option><option value="SVC">
+                萨尔瓦多科朗
+            </option><option value="STD">
+                圣多美多布拉
+            </option><option value="SAR">
+                沙特阿拉伯里亚尔
+            </option><option value="SCR">
+                塞舌尔法郎
+            </option><option value="SLL">
+                塞拉利昂利昂
+            </option><option value="SIT">
+                斯洛文尼亚托拉捷夫
+            </option><option value="SBD">
+                所罗门群岛元
+            </option><option value="SOS">
+                索马里先令
+            </option><option value="SHP">
+                圣赫勒拿群岛磅
+            </option><option value="SDG">
+                苏丹第纳尔
+            </option><option value="SZL">
+                斯威士兰里兰吉尼
+            </option><option value="SGD">
+                新加坡元
+            </option><option value="SYP">
+                叙利亚镑
+            </option><option value="TRY">
+                土耳其新里拉
+            </option><option value="TZS">
+                坦桑尼亚先令
+            </option><option value="TOP">
+                汤加潘加
+            </option><option value="TTD">
+                特立尼达和多巴哥元
+            </option><option value="TND">
+                突尼斯第纳尔
+            </option><option value="TJS">
+                塔吉克斯坦索莫尼
+            </option><option value="UAH">
+                乌克兰赫夫米
+            </option><option value="UYU">
+                乌拉圭新比索
+            </option><option value="UGX">
+                乌干达先令
+            </option><option value="VUV">
+                瓦努阿图瓦图
+            </option><option value="VEF">
+                委内瑞拉博利瓦
+            </option><option value="VND">
+                越南盾
+            </option><option value="WST">
+                萨摩亚塔拉
+            </option><option value="XOF">
+                多哥非洲共同体法郎
+            </option><option value="XAF">
+                刚果中非共同体法郎
+            </option><option value="XCD">
+                格林纳达东加勒比元
+            </option><option value="XPF">
+                太平洋法郎
+            </option><option value="YER">
+                也门里亚尔
+            </option><option value="ZWD">
+                津巴布韦元
+            </option><option value="ZAR">
+                南非兰特
+            </option><option value="ZMW">
+                赞比亚克瓦查
+            </option></select> <i class="eva eva-arrow-ios-downward-outline"></i></div></div></div></div></section> <section class="nya-container"><h2 class="nya-title"><span>Explain</span></h2> <ul class="nya-list"><li>本汇率仅供参考，最终以各银行实际交易汇率为准</li> <li>本站对使用该汇率表所导致的结果概不承担任何责任</li></ul></section></div></main> <!----></div></div></div><script>window.__NUXT__=function(o,i,e,t,a,d,s){return a.name="实时汇率转换",a.path="/tools/exchange_rate",{layout:"default",data:[{}],error:null,state:{dark:!(a.head={meta:[{hid:o,keywords:"实时汇率转换,MikuTools,Ice-Hazymoon,在线工具"},{hid:i,description:"在线实时汇率转换"}],title:"实时汇率转换 - MikuTools"}),token:"",eggs:!1,inFrames:!1,currentTool:a,setting:{hide:[]},tools:[{title:"媒体类",icon:"play-circle-outline",list:[{name:"Instagram 图片视频下载",path:"/tools/instagram_media_downloader",head:{meta:[{hid:o,keywords:"Instagram 图片下载,Instagram 视频解析下载,MikuTools,Ice-Hazymoon,在线工具"},{hid:i,description:"在线 Instagram 图片视频解析下载"}],title:"Instagram 图片视频下载 - MikuTools"}},{name:"Twitter 视频下载",path:"/tools/twitter_video_downloader",head:{meta:[{hid:o,keywords:"Twitter 视频解析下载,MikuTools,Ice-Hazymoon,在线工具"},{hid:i,description:"在线 Twitter 视频解析下载"}],title:"Twitter 视频下载 - MikuTools"}},{name:"TikTok 视频下载",path:"/tools/tiktok_video_downloader",head:{meta:[{hid:o,keywords:"TikTok 视频解析下载,MikuTools,Ice-Hazymoon,在线工具"},{hid:i,description:"在线 TikTok 视频解析下载"}],title:"TikTok 视频下载 - MikuTools"}},{name:"Pornhub 视频下载",path:"/tools/pornhub_video_downloader",head:{meta:[{hid:o,keywords:"Pornhub 视频解析下载,MikuTools,Ice-Hazymoon,在线工具"},{hid:i,description:"在线 Pornhub 视频解析下载"}],title:"Pornhub 视频下载 - MikuTools"}},{name:"Youtube 视频下载",path:"/tools/youtube_video_downloader",head:{meta:[{hid:o,keywords:"Youtube 视频解析下载,MikuTools,Ice-Hazymoon,在线工具"},{hid:i,description:"在线 Youtube 视频解析下载"}],title:"Youtube 视频下载 - MikuTools"}},{name:"Bilibili 视频下载",path:"/tools/bilibili_video_downloader",head:{meta:[{hid:o,keywords:"Bilibili 视频解析下载,MikuTools,Ice-Hazymoon,在线工具"},{hid:i,description:"在线 Bilibili 视频解析下载"}],title:"Bilibili 视频下载 - MikuTools"}},{name:"niconico 视频下载",path:"/tools/niconico_video_downloader",head:{meta:[{hid:o,keywords:"niconico 视频解析下载,MikuTools,Ice-Hazymoon,在线工具"},{hid:i,description:"在线 niconico 视频解析下载"}],title:"niconico 视频下载 - MikuTools"}},{name:"抖音视频下载",path:"/tools/douyin_video_downloader",head:{meta:[{hid:o,keywords:"抖音视频解析下载,MikuTools,Ice-Hazymoon,在线工具"},{hid:i,description:"在线抖音视频解析下载"}],title:"抖音视频下载 - MikuTools"}},{name:"快手视频下载",path:"/tools/kuaishou_video_downloader",head:{meta:[{hid:o,keywords:"快手视频解析下载,MikuTools,Ice-Hazymoon,在线工具"},{hid:i,description:"在线快手视频下载"}],title:"快手视频下载 - MikuTools"}},{name:"头条视频下载",path:"/tools/toutiao_video_downloader",head:{meta:[{hid:o,keywords:"今日头条视频解析下载,MikuTools,Ice-Hazymoon,在线工具"},{hid:i,description:"在线今日头条视频解析下载"}],title:"头条视频下载 - MikuTools"}},{name:"网易云视频下载",path:"/tools/163_video_downloader",head:{meta:[{hid:o,keywords:"网易云音乐视频解析下载,网易云音乐MV解析下载,MikuTools,Ice-Hazymoon,在线工具"},{hid:i,description:"在线网易云音乐视频解析下载"}],title:"网易云视频下载 - MikuTools"}},{name:"皮皮虾无水印视频下载",path:"/tools/pipixia_video_downloader",head:{meta:[{hid:o,keywords:"皮皮虾无水印视频下载,MikuTools,Ice-Hazymoon,在线工具"},{hid:i,description:"在线皮皮虾无水印视频解析下载"}],title:"皮皮虾无水印视频下载 - MikuTools"}},{name:"最右无水印视频下载",path:"/tools/zuiyou_video_downloader",head:{meta:[{hid:o,keywords:"最右无水印视频下载,MikuTools,Ice-Hazymoon,在线工具"},{hid:i,description:"在线最右无水印视频解析下载"}],title:"最右无水印视频下载 - MikuTools"}},{name:"TED 视频下载",path:"/tools/ted_video_downloader",head:{meta:[{hid:o,keywords:"TED 视频解析下载,MikuTools,Ice-Hazymoon,在线工具"},{hid:i,description:"在线 TED 视频解析下载"}],title:"TED 视频下载 - MikuTools"}},{name:"91porn 视频下载",path:"/tools/91porn_video_downloader",head:{meta:[{hid:o,keywords:"91porn 视频解析下载,MikuTools,Ice-Hazymoon,在线工具"},{hid:i,description:"在线 91porn 视频解析下载"}],title:"91porn 视频下载 - MikuTools"}},{name:"SpankBang 视频下载",hot:e,path:"/tools/spankbang_video_downloader",head:{meta:[{hid:o,keywords:"SpankBang 视频解析下载,MikuTools,Ice-Hazymoon,在线工具"},{hid:i,description:"在线 SpankBang 视频解析下载"}],title:"SpankBang 视频下载 - MikuTools"}},{name:"微博视频下载",path:"/tools/weibo_video.downloader",head:{meta:[{hid:o,keywords:"微博视频解析下载,MikuTools,Ice-Hazymoon,在线工具"},{hid:i,description:"在线微博视频解析下载"}],title:"微博视频下载 - MikuTools"}},{name:"5sing 歌曲下载",path:"/tools/5sing_downloader",head:{meta:[{hid:o,keywords:"5sing mp3解析下载,5sing 在线解析,MikuTools,Ice-Hazymoon,在线工具"},{hid:i,description:"在线 5sing mp3解析下载"}],title:"5sing 歌曲下载 - MikuTools"}},{name:"网易云歌曲下载",path:"/tools/163_music_downloader",head:{meta:[{hid:o,keywords:"网易云音乐 mp3 解析下载,网易云在线解析下载,MikuTools,Ice-Hazymoon,在线工具"},{hid:i,description:"在线网易云音乐mp3解析下载"}],title:"网易云歌曲下载 - MikuTools"}},{name:"SoundCloud 歌曲下载",path:"/tools/soundcloud_music_downloader",head:{meta:[{hid:o,keywords:"SoundCloud 歌曲解析下载,MikuTools,Ice-Hazymoon,在线工具"},{hid:i,description:"在线 SoundCloud mp3解析"}],title:"SoundCloud 歌曲下载 - MikuTools"}},{name:"哔哩哔哩封面获取",path:"/tools/bilibili_cover_get",head:{meta:[{hid:o,keywords:"哔哩哔哩封面获取,bilibili封面获取,MikuTools,Ice-Hazymoon,在线工具"},{hid:i,description:"在线 bilibili 封面获取"}],title:"哔哩哔哩封面获取 - MikuTools"}}]},{title:"生活购物",icon:"shopping-cart-outline",list:[{name:"淘口令解析",path:"/tools/taokouling",auth:e,head:{meta:[{hid:o,keywords:"在线淘口令解析解析,MikuTools,Ice-Hazymoon,在线工具"},{hid:i,description:"在线淘口令解析解析"}],title:"淘口令解析 - MikuTools"}}]},{title:"其他工具",icon:"layers-outline",list:[{name:"车辆信息查询",path:"/tools/driver",head:{meta:[],title:"车辆信息查询 - MikuTools"}},{name:"亲戚关系计算器",path:"/tools/relatives_name",head:{meta:[{hid:o,keywords:"亲戚关系计算器,MikuTools,Ice-Hazymoon,在线工具"},{hid:i,description:"在线亲戚关系计算器"}],title:"亲戚关系计算器 - MikuTools"}},a,{name:"短链接生成",path:"/tools/short_link",head:{meta:[{hid:o,keywords:"短链接生成,t.cn短链接生成,MikuTools,Ice-Hazymoon,在线工具"},{hid:i,description:"在线短链接生成"}],title:"短链接生成 - MikuTools"}},{name:d,path:"/tools/qrcode_generation",head:{meta:[{hid:o,keywords:"在线二维码生成,在线二维码内容解析,MikuTools,Ice-Hazymoon,在线工具"},{hid:i,description:d}],title:"二维码生成/解析 - MikuTools"}},{name:"磁力搜索",path:"/tools/bt_search",head:{meta:[{hid:o,keywords:"磁力搜索,种子搜索,BT搜索,MikuTools,Ice-Hazymoon,在线工具"},{hid:i,description:"在线磁力种子搜索"}],title:"磁力搜索 - MikuTools"}},{name:"IP地址查询",path:"/tools/ip_address_query",head:{meta:[{hid:o,keywords:"IP 地址查询,MikuTools,Ice-Hazymoon,在线工具"},{hid:i,description:"在线 IP 地址查询"}],title:"IP地址查询 - MikuTools"}},{name:"Whois信息查询",path:"/tools/whois_query",head:{meta:[{hid:o,keywords:"Whois 信息查询,MikuTools,Ice-Hazymoon,在线工具"},{hid:i,description:"在线 Whois 信息查询"}],title:"Whois信息查询 - MikuTools"}},{name:"这是什么动漫",path:"/tools/what_anime_is_this",head:{meta:[{hid:o,keywords:"根据截图搜索动漫,whatanime,MikuTools,Ice-Hazymoon,在线工具"},{hid:i,description:"根据截图搜索动漫"}],title:"这是什么动漫 - MikuTools"}},{name:"以图搜图",path:"/tools/search_pic",head:{meta:[{hid:o,keywords:"以图搜图,pixiv图片搜索,SauceNAO,MikuTools,Ice-Hazymoon,在线工具"},{hid:i,description:"动漫图片找出处"}],title:"以图搜图 - MikuTools"}},{name:"颜色处理",hot:e,path:"/tools/color",head:{meta:[{hid:o,keywords:"hex转rgb,颜色代码转换,在线颜色选择,MikuTools,Ice-Hazymoon,在线工具"},{hid:i,description:"在线图片选择"}],title:"颜色处理 - MikuTools"}},{name:"收款码合并",path:"/tools/universal_pay",head:{meta:[{hid:o,keywords:"免费收款码合并,免费三码合一,支付宝收款码合并,微信收款码合并,QQ收款码合并,MikuTools,Ice-Hazymoon,在线工具"},{hid:i,description:"在线免费收款码合并"}],title:"收款码合并 - MikuTools"}},{name:"温度单位转换",path:"/tools/temperature_conversion",head:{meta:[{hid:o,keywords:"温度单位转换,摄氏度单位转换,华氏度转单位换,开氏度单位转换,兰氏度单位转换,列氏度单位转换,MikuTools,Ice-Hazymoon,在线工具"},{hid:i,description:"在线国际温度单位转换"}],title:"温度单位转换 - MikuTools"}},{name:"天气查询",path:"/tools/weather",head:{meta:[{hid:o,keywords:"天气查询,MikuTools,Ice-Hazymoon,在线工具"},{hid:i,description:"在线天气查询"}],title:"天气查询 - MikuTools"}},{name:"身份证号码",path:"/tools/chinese_id",head:{meta:[{hid:o,keywords:"身份证号码查询,随机身份证号码生成,身份证信息查询,MikuTools,Ice-Hazymoon,在线工具"},{hid:i,description:"身份证号码查询/生成"}],title:"身份证号码 - MikuTools"}},{name:s,path:"/tools/mobile_tel_segment",head:{meta:[{hid:o,keywords:"手机号码归属地查询,MikuTools,Ice-Hazymoon,在线工具"},{hid:i,description:s}],title:"号码归属地查询 - MikuTools"}},{name:"快递查询",path:"/tools/kuaidi",head:{meta:[{hid:o,keywords:"在线快递查询,MikuTools,Ice-Hazymoon,在线工具"},{hid:i,description:"在线快递查询"}],title:"快递查询 - MikuTools"}}]},{title:"图片相关",icon:"image-outline",list:[{name:"Pornhub 风格Logo",path:"/tools/pornhub_logo",head:{meta:[{hid:o,keywords:"PornHub 风格图片制作,PornHub Logo 制作,MikuTools,Ice-Hazymoon,在线工具"},{hid:i,description:"在线 PornHub 风格图片制作"}],title:"Pornhub 风格Logo - MikuTools"}},{name:"YouTube 风格Logo",path:"/tools/youtube_logo",head:{meta:[{hid:o,keywords:"YouTube 风格图片制作,YouTube Logo 制作,MikuTools,Ice-Hazymoon,在线工具"},{hid:i,description:"在线 YouTube 风格图片制作"}],title:"YouTube 风格Logo - MikuTools"}},{name:"视频转GIF",path:"/tools/video2gif",head:{meta:[{hid:o,keywords:"视频转换GIF图片,MikuTools,Ice-Hazymoon,在线工具"},{hid:i,description:"在线视频转换GIF图片"}],title:"视频转GIF - MikuTools"}},{name:"微博生成器",path:"/tools/meme-weibo",head:{meta:[{hid:o,keywords:"微博生成器,王思聪微博生成器,MikuTools,Ice-Hazymoon,在线工具"},{hid:i,description:"在线微博生成器"}],title:"微博生成器 - MikuTools"}},{name:"抖音风格文字生成",path:"/tools/douyin_text",head:{meta:[{hid:o,keywords:"抖音风格文字生成,抖音样式文字生成,MikuTools,Ice-Hazymoon,在线工具"},{hid:i,description:"在线抖音风格文字生成"}],title:"抖音风格文字生成 - MikuTools"}},{name:"图片编辑",path:"/tools/image_editor",head:{meta:[{hid:o,keywords:"图片编辑器,图片处理,表情包制作,MikuTools,Ice-Hazymoon,在线工具"},{hid:i,description:"在线图片编辑器"}],title:"图片编辑 - MikuTools"}},{name:"身份证加水印",path:"/tools/watermark",head:{meta:[{hid:o,keywords:"身份证加水印,敏感信息加水印,图片加水印,MikuTools,Ice-Hazymoon,在线工具"},{hid:i,description:"在线身份证加水印"}],title:"身份证加水印 - MikuTools"}},{name:"图片压缩",path:"/tools/image_compression",auth:e,head:{meta:[{hid:o,keywords:"tinypng,图片压缩,png图片压缩,jpg图片压缩,在线图片压缩,MikuTools,Ice-Hazymoon,在线工具"},{hid:i,description:"在线图片压缩"}],title:"图片压缩 - MikuTools"}}]},{title:"文字处理",icon:"text-outline",list:[{name:"数字转大写中文",path:"/tools/number_to_zh",head:{meta:[{hid:o,keywords:"数字转大写中文,中文金额转换,人民币转中文,中文转人民币,MikuTools,Ice-Hazymoon,在线工具"},{hid:i,description:"在线人民币转中文"}],title:"数字转大写中文 - MikuTools"}},{name:"日语转换",path:"/tools/kuroshiro",head:{meta:[{hid:o,keywords:"日语转换,日语转罗马音,平假名转罗马音,平假名片假名互转,MikuTools,Ice-Hazymoon,在线工具"},{hid:i,description:"在线日语转换罗马音/平假名/片假名"}],title:"日语转换 - MikuTools"}},{name:"文本加密解密",path:"/tools/crypto",head:{meta:[{hid:o,keywords:"文本加密解密,文本哈希计算,MD5加密,AES,DES,HmacMD5,HmacSHA1,HmacSHA256,HmacSHA512,RC4,RC4Drop,RIPEMD160,Rabbit,SHA1,SHA256,SHA3,TripleDES,MikuTools,Ice-Hazymoon,在线工具"},{hid:i,description:"在线文本哈希散列计算"}],title:"文本加密解密 - MikuTools"}},{name:"文本编码解码",path:"/tools/encoding",head:{meta:[{hid:o,keywords:"文本编码解码,文本base64编码,社会主义核心价值观加密,MikuTools,Ice-Hazymoon,在线工具"},{hid:i,description:"在线文本编码解码"}],title:"文本编码解码 - MikuTools"}},{name:"富文本编辑器",path:"/tools/rich_text_editor",head:{meta:[{hid:o,keywords:"富文本编辑器,MikuTools,Ice-Hazymoon,在线工具"},{hid:i,description:"在线富文本编辑器"}],title:"富文本编辑器 - MikuTools"}},{name:"Markdown编辑器",path:"/tools/markdown",head:{meta:[{hid:o,keywords:"Markdown编辑器,MikuTools,Ice-Hazymoon,在线工具"},{hid:i,description:"在线Markdown编辑器"}],title:"Markdown编辑器 - MikuTools"}},{name:"摩斯电码转换",path:"/tools/morse",head:{meta:[{hid:o,keywords:"摩斯电码转换,中文摩斯电码转换,MikuTools,Ice-Hazymoon,在线工具"},{hid:i,description:"在线摩斯电码转换"}],title:"摩斯电码转换 - MikuTools"}},{name:"汉字转拼音",path:"/tools/pinyin",head:{meta:[{hid:o,keywords:"汉字转拼音,MikuTools,Ice-Hazymoon,在线工具"},{hid:i,description:"在线汉字转拼音"}],title:"汉字转拼音 - MikuTools"}},{name:"汉字字典",path:"/tools/dictionary",head:{meta:[{hid:o,keywords:"汉字字典,新华字典,MikuTools,Ice-Hazymoon,在线工具"},{hid:i,description:"在线汉字字典"}],title:"汉字字典 - MikuTools"}},{name:"中英文加空格",path:"/tools/text_autospace",head:{meta:[{hid:o,keywords:"中英文加空格,MikuTools,Ice-Hazymoon,在线工具"},{hid:i,description:"在线中英文加空格"}],title:"中英文加空格 - MikuTools"}}]},{title:"编程开发",icon:"code-outline",list:[{name:"进制转换",path:"/tools/hexconvert",head:{meta:[{hid:o,keywords:"进制转换,二进制转换,八进制转换,十进制转换,十六进制转换,三十二进制转换,MikuTools,Ice-Hazymoon,在线工具"},{hid:i,description:"在线进制转换"}],title:"进制转换 - MikuTools"}}]},{title:"网站相关",icon:"settings-2-outline",list:[{name:"留言反馈",path:"/leave_message",head:{meta:[],title:"留言反馈 - MikuTools"}},{name:"发送通知",path:"/send_notification",auth:e,head:{meta:[],title:"发送通知 - MikuTools"}},{name:"工具设置",path:"/setting",hot:e,head:{meta:[],title:"工具设置 - MikuTools"}},{name:"友情链接",path:"/links",hot:e,head:{meta:[],title:"友情链接 - MikuTools"}}]}]},serverRendered:e}}("keywords","description",!0,0,{},"二维码生成/解析","号码归属地查询")</script><script src="/_nuxt/8bf9876f635cffe7b4ca.js" defer></script><script src="/_nuxt/4d5d1acafbd8cd23e5ef.js" defer></script><script src="/_nuxt/5cd9b56705104a763463.js" defer></script><script src="/_nuxt/42e12a2f625e2f7e9c36.js" defer></script><script src="/_nuxt/8737579efc79abbbbe6b.js" defer></script>
+  </body>
+</html>
