@@ -9,7 +9,7 @@
     <a href="http://imiku.me/">
         <img src="https://badgen.net/badge/author/Ice-Hazymoon/f2a" alt="Author">
     </a>
-    <a href="https://mikutools.netlify.com/">
+    <a href="https://miku.tools/">
         <img src="https://img.shields.io/badge/%F0%9F%9A%80-open--in--browser-e10079.svg" alt="Live Demo">
     </a>
     <a href="https://travis-ci.com/Ice-Hazymoon/miku-tools">
