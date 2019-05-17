@@ -1,0 +1,294 @@
+@import './typo.scss';
+
+$border-width: 1px;
+
+html {
+    overflow-y: scroll;
+}
+
+.v--modal-block-scroll{
+    height: 100vh;
+}
+
+.nya-c-success{
+    color: var(--theme-success);
+}
+
+.nya-c-danger{
+    color: var(--theme-danger);
+}
+
+.nya-c-info{
+    color: var(--theme-info);
+}
+
+.nya-c-wrning{
+    color: var(--theme-wrning);
+}
+
+:root {
+    overflow-y: auto;
+    overflow-x: hidden;
+    --t0: transparent;
+    --theme: #00adb5;
+    --theme-success: #52c41a;
+    --theme-danger: #f5222d;
+    --theme-info: #1890ff;
+    --theme-wrning: #faad14;
+
+    @media (max-width: 500px) {
+        font-size: 13px;
+    }
+    @media (max-width: 380px) {
+        font-size: 12px;
+    }
+    @media (max-width: 350px) {
+        font-size: 10px;
+    }
+}
+
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    width: 100vw;
+    overflow: hidden;
+}
+
+a {
+    color: #0366d6;
+    word-break: break-all;
+    text-decoration: none;
+    cursor: alias;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+pre {
+    margin: 15px 0;
+    padding: 10px 15px;
+    line-height: 1.5;
+    font-size: 14px;
+    font-family: Menlo, Monaco, Consolas, Andale Mono, lucida console, Courier New, monospace;
+    background-color: var(--t1);
+    color: var(--t2);
+    overflow-x: auto;
+    &::-webkit-scrollbar {
+        width: 10px;
+        height: 8px;
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: var(--t2);
+    }
+}
+
+hr{
+    height: 10px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    border: none;
+    border-bottom: 1px dashed var(--t1);
+}
+
+// toasted
+.toasted-container{
+    top: 6% !important;
+    .miku-toasted{
+        justify-content: center !important;
+        @media (max-width: 700px) {
+            padding: 5px 20px !important;
+            line-height: 1.3 !important;
+        }
+    }
+}
+
+// 路由过度
+.page-enter-active,
+.page-leave-active {
+    transition: all .25s;
+}
+
+.page-leave-to,
+.page-enter{
+    transform: translateY(20px);
+    opacity: 0;
+}
+
+.page-enter-to
+.page-leave{
+    transform: translateY(0);
+    opacity: 1;
+}
+
+// 滚动条
+::-webkit-scrollbar {
+    width: 8px;
+    height: 10px;
+}
+
+/*滑块*/
+::-webkit-scrollbar-thumb {
+    background-color: var(--t1);
+}
+
+.dark {
+    background-color: var(--t2);
+    a {
+        color: #4183c4;
+    }
+    .vue-dialog {
+        .vue-dialog-buttons {
+            border-top: 1px solid rgb(97, 97, 97);
+        }
+    }
+}
+
+.nya-subtitle{
+    display: block;
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.nya-bg-0 {
+    background-color: var(--t0);
+}
+
+.nya-bg-1 {
+    background-color: var(--t1);
+}
+
+.nya-bg-2 {
+    background-color: var(--t2);
+}
+
+.nya-bd-0 {
+    border-color: var(--t0);
+}
+
+.nya-bd-1 {
+    border-color: var(--t1);
+}
+
+.nya-bd-2 {
+    border-color: var(--t2);
+}
+
+.nya-co-0 {
+    color: var(--t0);
+}
+
+.nya-co-1 {
+    color: var(--t1);
+}
+
+.nya-co-2 {
+    color: var(--t2);
+}
+
+.vue-dialog {
+    background-color: var(--t2) !important;
+    color: var(--t1) !important;
+    max-width: 100%;
+}
+
+a.nya-btn{
+    color: var(--t1);
+    &:hover{
+        text-decoration: none;
+    }
+}
+
+.nya-btn {
+    display: inline-block;
+    padding: 10px 15px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+    border: $border-width solid;
+    background-color: var(--t2);
+    border-color: var(--t1);
+    color: var(--t1);
+
+    &:active {
+        background-color: var(--t1);
+        color: var(--t2);
+    }
+
+    &[disabled="disabled"] {
+        opacity: .8;
+        cursor: no-drop;
+    }
+}
+
+.nya-list {
+    margin-left: 0;
+    padding-left: 20px;
+
+    li {
+        margin: 10px 0;
+        line-height: 1.3;
+    }
+}
+
+.nya-table {
+    border-spacing: 0;
+    border-top: solid $border-width;
+    border-right: solid $border-width;
+    max-width: 100%;
+    margin: auto;
+    border-collapse: collapse;
+    white-space: nowrap;
+    table-layout:fixed;
+    overflow: auto;
+    th,
+    td {
+        font-size: 18px;
+        border-bottom: solid $border-width;
+        border-left: solid $border-width;
+        border-collapse: collapse;
+        padding: 10px;
+        text-align: left;
+        text-overflow:ellipsis;
+        overflow:hidden;
+    }
+    @media(max-width: 600px){
+        display: block;
+        white-space: nowrap;
+        overflow: auto;
+        width: 100%;
+        table-layout: auto;
+    }
+}
+
+.inputbtn {
+    display: flex;
+    align-items: flex-end;
+    max-width: 100%;
+    .nya-input, .nya-btn{
+        display: inline-block;
+    }
+    .nya-input{
+        flex:1;
+        max-width: calc(100% - 120px);
+    }
+    .nya-btn{
+        flex:none;
+    }
+    button {
+        width: 120px;
+        border-left: none;
+    }
+}
+
+.nya-hide-scroll{
+    &::-webkit-scrollbar {
+        width: 0 !important;
+    }
+    -ms-overflow-style: none;
+    overflow: -moz-scrollbars-none;
+}

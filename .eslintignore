@@ -1,0 +1,6 @@
+static/
+bower_components/
+build/Release
+node_modules/
+.nuxt
+dist
