@@ -14,13 +14,13 @@
     </a>
 </p>
 
-### 介绍
+## 介绍
 
 本项目是 [https://miku.tools](https://miku.tools) 的开源版本，保留了部分无需后端的功能。
 
 > [https://miku.tools](https://miku.tools)
 
-### 开发
+## 开发
 
 ```bash
 yarn install
@@ -34,7 +34,7 @@ yarn install
 yarn generate
 ```
 
-### 其他
+## 其他
 
 Q: 后端什么时候开源？  
 A: 因为本职不是后端，所以代码写的太垃圾（虽然前端也没好到哪去），无论安全性还是性能方面都有所欠缺，所以暂时不会开源。
