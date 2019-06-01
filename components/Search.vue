@@ -40,16 +40,21 @@ export default {
         },
         searchList() {
             if (!this.value) return [];
-            let results = [];
+            const results = [];
+            let value = this.value.toLowerCase();
+            const isPureLetter = /^[a-zA-Z\s]/.test(value);
+            let keywordsReg = undefined;
+            if (isPureLetter) {
+                value = value.replace(/\s/g, '');
+                keywordsReg = new RegExp(value.split('').join('.*?'));
+            }
             this.toolsList.forEach(tool => {
-                if (this.showBtn(tool)) {
-                    if (
-                        tool.name
-                            .toLowerCase()
-                            .indexOf(this.value.toLowerCase()) !== -1
-                    ) {
-                        results.push(tool);
-                    }
+                if (!this.showBtn(tool)) return;
+                const name = tool.name.toLowerCase();
+                if (name.indexOf(value) > -1) {
+                    results.push(tool);
+                } else if (isPureLetter && keywordsReg.test(tool.pinyin)) {
+                    results.push(tool);
                 }
             });
             return results;
@@ -57,7 +62,7 @@ export default {
     },
     methods: {
         showBtn(tool) {
-            return (this.$store.state.setting.hide.indexOf(tool.path) === -1);
+            return this.$store.state.setting.hide.indexOf(tool.path) === -1;
         }
     }
 };

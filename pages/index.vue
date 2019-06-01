@@ -82,12 +82,13 @@ export default {
         showSection(item) {
             let n = 0;
             item.list.forEach(i => {
-                if (this.$store.state.setting.hide.indexOf(i.path) !== -1) n += 1;
+                if (this.$store.state.setting.hide.indexOf(i.path) !== -1)
+                    n += 1;
             });
             return !(n === item.list.length);
         },
         showBtn(tool) {
-            return (this.$store.state.setting.hide.indexOf(tool.path) === -1);
+            return this.$store.state.setting.hide.indexOf(tool.path) === -1;
         }
     }
 };

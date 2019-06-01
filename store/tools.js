@@ -1,3 +1,5 @@
+import pinyin from 'pinyin';
+
 export const state = () => {
     const tools = [
         {
@@ -385,6 +387,14 @@ export const state = () => {
             };
             if (!tool.head) {
                 tool.head = head;
+            }
+            if (tool.name) {
+                const options = {
+                    style: pinyin.STYLE_NORMAL
+                };
+                tool.pinyin = [].concat
+                    .apply([], pinyin(tool.name, options))
+                    .join('');
             }
 
             head.title = `${tool.head.title ? tool.head.title : tool.name} - ${

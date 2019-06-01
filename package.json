@@ -37,6 +37,7 @@
     "nuxt": "^2.4.0",
     "nzh": "^1.0.4",
     "pangu": "^4.0.7",
+    "pinyin": "^2.9.0",
     "postcss-pxtorem": "^4.0.1",
     "qr-image": "^3.2.0",
     "relationship.js": "^1.0.0",
