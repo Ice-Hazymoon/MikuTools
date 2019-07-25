@@ -1,0 +1,56 @@
+{
+    "projectName": "MikuTools",
+    "projectOwner": "Ice-Hazymoon",
+    "files": ["README.md"],
+    "imageSize": 100,
+    "contributorsPerLine": 7,
+    "contributors": [
+        {
+            "login": "Git-So",
+            "name": "Git-So",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/22292451?v=4",
+            "profile": "https://github.com/Git-So",
+            "contributions": [
+                "code"
+            ]
+        },
+        {
+            "login": "KeJunMao",
+            "name": "KeJunMao",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/18414281?v=4",
+            "profile": "https://github.com/KeJunMao",
+            "contributions": [
+                "code",
+                "question"
+            ]
+        },
+        {
+            "login": "tamshen",
+            "name": "tamshen",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/18414281?v=4",
+            "profile": "https://github.com/tamshen",
+            "contributions": [
+                "design"
+            ]
+        },
+        {
+            "login": "houko",
+            "name": "houko",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/12625278?v=4",
+            "profile": "https://github.com/houko",
+            "contributions": [
+                "translation"
+            ]
+        },
+        {
+            "login": "bougieL",
+            "name": "bougieL",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/36102904?v=4",
+            "profile": "https://github.com/bougieL",
+            "contributions": [
+                "code",
+                "ideas"
+            ]
+        }
+    ]
+}
