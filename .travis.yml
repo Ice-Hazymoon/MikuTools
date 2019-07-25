@@ -1,0 +1,19 @@
+language: node_js
+node_js:
+  - "10"
+script: 
+  - echo "hello world"
+install:
+  - yarn install
+  - yarn run generate
+cache:
+  directories:
+    - node_modules
+after_script:
+  - cd ./dist
+  - git init
+  - git config user.name "Ice-Hazymoon"
+  - git config user.email "imiku.me@gmail.com"
+  - git add .
+  - git commit -m "automated build"
+  - git push --quiet --force https://${REPO_TOKEN}@github.com/Ice-Hazymoon/MikuTools.git master

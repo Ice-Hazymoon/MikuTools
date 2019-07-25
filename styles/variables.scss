@@ -1,0 +1,32 @@
+$theme: #249ffd;
+$borderColor: #DCDEE0;
+$red: #f93a6d;
+
+$c-white: hsl(0, 0%, 100%);
+$c-black: hsl(0, 0%, 4%);
+$c-light: hsl(0, 0%, 96%);
+$c-dark: hsl(0, 0%, 21%);
+$c-primary: hsl(171, 100%, 41%);
+$c-link: hsl(217, 71%, 53%);
+$c-info: hsl(204, 86%, 53%);
+$c-success: hsl(141, 71%, 48%);
+$c-warning: hsl(48, 100%, 67%);
+$c-danger: hsl(348, 100%, 61%);
+
+@mixin line-clamp ($num) {
+    display: -webkit-box;
+    /* autoprefixer: ignore next */
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $num;
+    overflow: hidden;
+}
+
+@mixin img ($width, $height: $width) {
+    width: $width;
+    height: $height;
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}

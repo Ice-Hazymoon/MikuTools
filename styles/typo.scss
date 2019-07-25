@@ -1,0 +1,253 @@
+$font: 'Source Sans Pro',
+-apple-system,
+BlinkMacSystemFont,
+'Segoe UI',
+Roboto,
+'Helvetica Neue',
+Arial,
+sans-serif;
+
+html{
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+body {
+    font-family: $font;
+    word-spacing: 1px;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+}
+
+ul {
+    padding-left: 25px;
+    li{
+        margin: 5px 0;
+    }
+}
+
+p{
+    line-height: 1.5;
+}
+
+input[type="search"]::-webkit-search-cancel-button{
+    display: none;
+}
+
+input{
+    -webkit-appearance: none;
+    border-radius: 0;
+}
+
+blockquote {
+    padding-left: 20px;
+    border-left: 4px solid #e2e3e4;
+    margin: 20px 0;
+    color: #8a8989;
+}
+
+.viewer-toolbar > ul > li{
+    margin: 0;
+}
+
+.v-note-help-show{
+    box-sizing: border-box;
+}
+
+[type="button"]{
+    -webkit-appearance: none;
+}
+
+.typo {
+    a {
+        color: var(--theme);
+        transition: all 0.35s;
+        text-decoration: none;
+        position: relative;
+        padding-bottom: 2px;
+        word-wrap: break-word;
+    }
+
+    p {
+        margin-bottom: 20px;
+        line-height: 1.7;
+    }
+
+    pre {
+        margin: 1em 0;
+        padding: 10px 15px;
+        font-size: 14px;
+        font-family: Menlo, Monaco, Consolas, Andale Mono, lucida console,
+            Courier New, monospace;
+        background-color: #393e46;
+        overflow-x: auto;
+
+        &::-webkit-scrollbar {
+            width: 10px;
+            height: 8px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            background-color: #b6b4b4;
+        }
+        code{
+            background-color: transparent;
+        }
+    }
+
+    code {
+        font-family: Menlo, Monaco, Consolas, Andale Mono, lucida console,
+            Courier New, monospace;
+        background-color: var(--t1);
+        color: var(--t2);
+    }
+
+    img {
+        max-width: 100%;
+        margin: 10px 0;
+        border-radius: 6px;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-weight: normal;
+        color: var(--t1);
+        margin: 15px 0;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+    h3 {
+        font-size: 24px;
+    }
+
+    h4 {
+        font-size: 21px;
+    }
+
+    h5 {
+        font-size: 19px;
+    }
+
+    h6 {
+        font-size: 17px;
+    }
+
+    h4,
+    h5,
+    h6 {
+        font-weight: bold;
+    }
+
+    h4:before,
+    h5:before,
+    h6:before {
+        display: inline-block;
+        width: 20px;
+        content: '#';
+        color: #aaa;
+    }
+
+    hr {
+        height: 10px;
+        margin-bottom: 12px;
+        border: none;
+        border-bottom: 1px dashed #393e46;
+    }
+
+    ol {
+        padding-left: 2em;
+        margin: 0 0 1.2em 0;
+        li{
+            list-style: decimal;
+        }
+    }
+
+    ul {
+        padding-left: 2em;
+        margin: 0 0 1.2em 0;
+        list-style: disc;
+    }
+
+    li {
+        // list-style: disc;decimal
+        margin-top: 5px;
+
+        ul,
+        ol {
+            margin: 0.8em 0;
+        }
+
+        ul {
+            list-style: circle;
+        }
+    }
+
+    table {
+        color: #5b6064;
+        border-spacing: 0;
+        border-radius: 6px;
+        text-align: center;
+        border-collapse: collapse;
+        box-shadow: 0 0 0 1px #eee;
+        display: inline-block;
+        max-width: 100%;
+        overflow: auto;
+        white-space: nowrap;
+        margin: auto;
+
+        &::-webkit-scrollbar {
+            width: 10px;
+            height: 10px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            background-color: #888;
+        }
+
+        tbody {
+            padding: 0 -2px;
+        }
+
+        thead {
+            border-bottom: 1px solid #eee;
+        }
+
+        th {
+            border-right: 1px solid #eee;
+            padding: 7px 14px;
+            font-weight: normal;
+        }
+
+        td {
+            border-right: 1px solid #eee;
+            padding: 8px 14px;
+        }
+
+        th:last-child,
+        td:last-child {
+            border: none;
+        }
+
+        tr {
+            &:nth-child(2n) {
+                background-color: #f8f8f8;
+            }
+        }
+    }
+}
