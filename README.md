@@ -68,6 +68,8 @@ A: Vue 全家桶 + [Nuxt.js](https://zh.nuxtjs.org/)
 
 本仓库仅供一个开源版本的备份，并不用于纪录提交纪录等，当[主站](https://miku.tools)更新到一定程度上的稳定版本时，才会重新更新该仓库
 
+## 贡献者
+
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
