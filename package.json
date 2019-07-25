@@ -10,7 +10,9 @@
     "start": "nuxt start",
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .eslintignore .",
-    "lintfix": "eslint --fix --ext .js,.vue --ignore-path .eslintignore ."
+    "lintfix": "eslint --fix --ext .js,.vue --ignore-path .eslintignore .",
+    "contributors:add": "all-contributors add",
+    "contributors:generate": "all-contributors generate"
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.5.4",
@@ -58,6 +60,7 @@
     "vuex-persistedstate": "^2.5.4"
   },
   "devDependencies": {
+    "all-contributors-cli": "^6.8.1",
     "babel-eslint": "^10.0.2",
     "cross-env": "^5.2.0",
     "eslint": "^6.0.1",
