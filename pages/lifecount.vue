@@ -135,16 +135,16 @@ export default {
 
             const pastDate = thisDay.diff(date, 'day'); // 已经过去的时间(天)
 
-            const deathDate = date.add(79, 'year'); // 80岁的时候
+            const deathDate = date.add(80, 'year'); // 80岁的时候
             const fromDeathDate = deathDate.diff(thisDay, 'day'); // 距离80岁还能活的时间(天)
 
-            const retiredDate = date.add(64, 'year'); // 65岁退休的时候
+            const retiredDate = date.add(65, 'year'); // 65岁退休的时候
             const fromRetiredDate = retiredDate.diff(thisDay, 'day'); // 距离65岁还能活的时间(天)
 
             const childrenDate = date.add(18 + haveChildren, 'year'); // 如果28岁生孩子，孩子18岁的时候
             const fromChildrenDate = childrenDate.diff(thisDay, 'day'); // 距离孩子18岁还能活的时间(天)
 
-            const parentsDate = date.add(79 - haveChildren, 'year'); // 距离父母死亡
+            const parentsDate = date.add(80 - haveChildren, 'year'); // 距离父母死亡
             const fromParentsDate = parentsDate.diff(thisDay, 'day'); // 距离父母死亡还能活的时间(天)
 
             const past = ~~(pastDate / 72); // 已经过去的方块
@@ -218,26 +218,24 @@ export default {
     methods: {
         setDateData() {
             const date = dayjs(this.date);
-            const deathDate = date.add(79, 'year'); // 80岁的时候
             const thisDay = dayjs();
-            const pastSecond = thisDay.diff(date, 'second'); // 已经过去的时间(秒)
-            const fromDeathSecond = deathDate.diff(thisDay, 'second'); // 距离85岁还能活的时间(秒)
+            const deathDate = date.add(80, 'year'); // 80岁的时候
             this.dateData = {
                 past: {
-                    year: (pastSecond / 60 / 60 / 24 / 30 / 12).toFixed(1),
-                    month: (pastSecond / 60 / 60 / 24 / 30).toFixed(1),
-                    day: (pastSecond / 60 / 60 / 24).toFixed(1),
-                    hour: (pastSecond / 60 / 60).toFixed(1),
-                    minute: (pastSecond / 60).toFixed(1),
-                    second: pastSecond
+                    year: thisDay.diff(date, 'year', true).toFixed(1),
+                    month: thisDay.diff(date, 'month', true).toFixed(1),
+                    day: thisDay.diff(date, 'day', true).toFixed(1),
+                    hour: thisDay.diff(date, 'hour', true).toFixed(1),
+                    minute: thisDay.diff(date, 'minute', true).toFixed(1),
+                    second: thisDay.diff(date, 'second', true).toFixed(1)
                 },
                 have: {
-                    year: (fromDeathSecond / 60 / 60 / 24 / 30 / 12).toFixed(1),
-                    month: (fromDeathSecond / 60 / 60 / 24 / 30).toFixed(1),
-                    day: (fromDeathSecond / 60 / 60 / 24).toFixed(1),
-                    hour: (fromDeathSecond / 60 / 60).toFixed(1),
-                    minute: (fromDeathSecond / 60).toFixed(1),
-                    second: fromDeathSecond
+                    year: deathDate.diff(thisDay, 'year', true).toFixed(1),
+                    month: deathDate.diff(thisDay, 'month', true).toFixed(1),
+                    day: deathDate.diff(thisDay, 'day', true).toFixed(1),
+                    hour: deathDate.diff(thisDay, 'hour', true).toFixed(1),
+                    minute: deathDate.diff(thisDay, 'minute', true).toFixed(1),
+                    second: deathDate.diff(thisDay, 'second', true).toFixed(1)
                 }
             };
         }

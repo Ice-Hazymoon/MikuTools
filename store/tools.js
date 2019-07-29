@@ -167,19 +167,6 @@ export const state = () => {
                         ],
                         description: '身份证号码查询/生成'
                     }
-                },
-                {
-                    name: '我几岁了?',
-                    path: '/how_old_am_i',
-                    head: {
-                        keywords: [
-                            '我几岁了',
-                            '年龄计算器',
-                            '周岁计算器',
-                            '虚岁计算器'
-                        ],
-                        description: '我几岁了'
-                    }
                 }
             ]
         },
