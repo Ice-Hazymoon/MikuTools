@@ -17,6 +17,12 @@
     </a>
 </p>
 
+## 备用域名
+
+如网站出现无法访问的情况，可尝试使用备用域名
+
+> [http://tools.imiku.me](http://tools.imiku.me)
+
 ## 介绍
 
 本项目是 [https://miku.tools](https://miku.tools) 的开源版本，保留了部分无需后端的功能。
