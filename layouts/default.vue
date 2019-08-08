@@ -101,10 +101,10 @@ export default {
             const setting = this.$store.state.setting.bg;
             let url;
             if (setting.type === 'bing') {
-                url = 'https://api.dujin.org/bing/1920.php';
+                url = '//api.dujin.org/bing/1920.php';
             } else if (setting.type === 'anime') {
                 url =
-                    'http://api.btstu.cn/sjbz/?lx=dongman&k=' +
+                    '//api.btstu.cn/sjbz/?lx=dongman&k=' +
                     Math.random()
                         .toString(10)
                         .substring(2);
