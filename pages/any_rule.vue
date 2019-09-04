@@ -15,7 +15,7 @@
                     </button>
                 </div>
                 <nya-copy :copy="item.rule.toString()">
-                    {{ item.rule }}
+                    <span v-text="item.rule"></span>
                 </nya-copy>
             </div>
         </nya-container>
