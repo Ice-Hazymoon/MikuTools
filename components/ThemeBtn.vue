@@ -1,5 +1,5 @@
 <template>
-    <div class="theme-btn" v-if="!$store.state.inFrames">
+    <div v-if="!$store.state.inFrames" class="theme-btn">
         <div class="line"></div>
         <div v-if="$store.state.dark" class="type-icon" @click="switchTheme">
             <i class="eva eva-sun-outline"></i>
