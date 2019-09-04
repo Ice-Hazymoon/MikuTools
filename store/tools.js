@@ -481,7 +481,7 @@ export const state = () => {
                 },
                 {
                     name: '正则大全',
-                    path: '/any-rule',
+                    path: '/any_rule',
                     head: {
                         keywords: ['正则大全'],
                         description: '正则大全'

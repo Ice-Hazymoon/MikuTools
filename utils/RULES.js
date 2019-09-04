@@ -1,21 +1,24 @@
 module.exports = [
-
     {
         title: '迅雷链接',
         rule: /^thunder:\/\/[a-zA-Z0-9]+=$/,
-        examples: ['thunder://QUEsICdtYWduZXQ6P3h0PXVybjpidGloOjBCQTE0RTUxRkUwNjU1RjE0Qzc4NjE4RjY4NDY0QjZFNTEyNjcyOUMnWlo='],
+        examples: [
+            'thunder://QUEsICdtYWduZXQ6P3h0PXVybjpidGloOjBCQTE0RTUxRkUwNjU1RjE0Qzc4NjE4RjY4NDY0QjZFNTEyNjcyOUMnWlo='
+        ]
     },
-
     {
         title: 'ed2k链接(宽松匹配)',
         rule: /^ed2k:\/\/|file|.+|\/$/,
-        examples: ['ed2k://|file|%E5%AF%84%E7%94%9F%E8%99%AB.PARASITE.2019.HD-1080p.X264.AAC-UUMp4(ED2000.COM).mp4|2501554832|C0B93E0879C6071CBED732C20CE577A3|h=5HTKZPQFYRKORN52I3M7GQ4QQCIHFIBV|/'],
+        examples: [
+            'ed2k://|file|%E5%AF%84%E7%94%9F%E8%99%AB.PARASITE.2019.HD-1080p.X264.AAC-UUMp4(ED2000.COM).mp4|2501554832|C0B93E0879C6071CBED732C20CE577A3|h=5HTKZPQFYRKORN52I3M7GQ4QQCIHFIBV|/'
+        ]
     },
-
     {
         title: '磁力链接(宽松匹配)',
         rule: /^magnet:\?xt=urn:btih:[0-9a-fA-F]{40,}.*$/,
-        examples: ['magnet:?xt=urn:btih:40A89A6F4FB1498A98087109D012A9A851FBE0FC'],
+        examples: [
+            'magnet:?xt=urn:btih:40A89A6F4FB1498A98087109D012A9A851FBE0FC'
+        ]
     },
     {
         title: '子网掩码',
@@ -40,7 +43,10 @@ module.exports = [
     {
         title: 'window下"文件"路径',
         rule: /^[a-zA-Z]:\\(?:\w+\\)*\w+\.\w+$/,
-        examples: ['C:\\Users\\Administrator\\Desktop\\qq.link', 'e:\\m\\vscode.exe']
+        examples: [
+            'C:\\Users\\Administrator\\Desktop\\qq.link',
+            'e:\\m\\vscode.exe'
+        ]
     },
     {
         title: 'A股代码',
@@ -48,7 +54,8 @@ module.exports = [
         examples: ['sz000858', 'SZ002136', 'sz300675', 'SH600600', 'sh601155']
     },
     {
-        title: '大于等于0, 小于等于150, 支持小数位出现5, 如145.5, 用于判断考卷分数',
+        title:
+            '大于等于0, 小于等于150, 支持小数位出现5, 如145.5, 用于判断考卷分数',
         rule: /^150$|^(?:\d|[1-9]\d|1[0-4]\d)(?:.5)?$/,
         examples: [150, 100.5]
     },
@@ -60,7 +67,7 @@ module.exports = [
     {
         title: 'md5格式(32位)',
         rule: /^[a-f0-9]{32}$/,
-        examples: ['21fe181c5bfc16306a6828c1f7b762e8'],
+        examples: ['21fe181c5bfc16306a6828c1f7b762e8']
     },
     {
         title: '版本号格式必须为X.Y.Z',
@@ -121,7 +128,7 @@ module.exports = [
     {
         title: '新能源车牌号',
         rule: /[京津沪渝冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤青藏川宁琼使领 A-Z]{1}[A-HJ-NP-Z]{1}(([0-9]{5}[DF])|([DF][A-HJ-NP-Z0-9][0-9]{4}))$/,
-        examples: ['京AD92035', '甘G23459F'],
+        examples: ['京AD92035', '甘G23459F']
     },
     {
         title: '非新能源车牌号',
@@ -149,7 +156,8 @@ module.exports = [
         examples: ['008618311006933', '+8617888829981', '19119255642']
     },
     {
-        title: '中国手机号(最宽松), 只要是1开头即可, 如果你的手机号是用来接收短信, 优先建议选择这一条',
+        title:
+            '中国手机号(最宽松), 只要是1开头即可, 如果你的手机号是用来接收短信, 优先建议选择这一条',
         rule: /^(?:(?:\+|00)86)?1\d{10}$/,
         examples: ['008618311006933', '+8617888829981', '19119255642']
     },
@@ -186,7 +194,13 @@ module.exports = [
     {
         title: '护照（包含香港、澳门）',
         rule: /(^[EeKkGgDdSsPpHh]\d{8}$)|(^(([Ee][a-fA-F])|([DdSsPp][Ee])|([Kk][Jj])|([Mm][Aa])|(1[45]))\d{7}$)/,
-        examples: ['s28233515', '141234567', '159203084', 'MA1234567', 'K25345719']
+        examples: [
+            's28233515',
+            '141234567',
+            '159203084',
+            'MA1234567',
+            'K25345719'
+        ]
     },
     {
         title: '帐号是否合法(字母开头，允许5-16字节，允许字母数字下划线组合',
@@ -245,7 +259,8 @@ module.exports = [
         examples: ['ABC', 'KD']
     },
     {
-        title: '密码强度正则，最少6位，包括至少1个大写字母，1个小写字母，1个数字，1个特殊字符',
+        title:
+            '密码强度正则，最少6位，包括至少1个大写字母，1个小写字母，1个数字，1个特殊字符',
         rule: /^.*(?=.{6,})(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[!@#$%^&*? ]).*$/,
         examples: ['Kd@curry666']
     },
