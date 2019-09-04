@@ -478,6 +478,14 @@ export const state = () => {
                         keywords: ['在线JSON编辑器', 'JSON格式化', 'JSON压缩'],
                         description: '在线JSON编辑器'
                     }
+                },
+                {
+                    name: '正则大全',
+                    path: '/any_rule',
+                    head: {
+                        keywords: ['正则大全'],
+                        description: '正则大全'
+                    }
                 }
             ]
         },

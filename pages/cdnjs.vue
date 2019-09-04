@@ -164,9 +164,7 @@ export default {
             if (!this.query) return;
             this.requestIn = true;
             this.$axios
-                .get(
-                    `https://api.cdnjs.com/libraries?search=${this.query}`
-                )
+                .get(`https://api.cdnjs.com/libraries?search=${this.query}`)
                 .then(e => {
                     if (e.data.total > 0) {
                         this.results = e.data;
@@ -192,9 +190,7 @@ export default {
                 value: true
             });
             this.$axios
-                .get(
-                    `https://api.cdnjs.com/libraries/${name}`
-                )
+                .get(`https://api.cdnjs.com/libraries/${name}`)
                 .then(e => {
                     this.$store.commit('SET_STORE', {
                         key: 'globalLoading',
