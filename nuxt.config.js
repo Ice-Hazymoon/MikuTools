@@ -185,10 +185,24 @@ export default {
      */
     axios: {
         baseURL: env.axios,
-        progress: false
+        progress: false,
+        proxy: true
         // See https://github.com/nuxt-community/axios-module#options
     },
-
+    proxy: {
+        '/url_convert/': {
+            target: 'https://tool.lu/urlconvert/ajax.html',
+            pathRewrite: {
+                '^/url_convert/': ''
+            }
+        },
+        '/IP/': {
+            target: 'http://129.28.193.155/IP/',
+            pathRewrite: {
+                '^/IP/': ''
+            }
+        }
+    },
     /*
      ** Build configuration
      */

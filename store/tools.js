@@ -167,6 +167,26 @@ export const state = () => {
                         ],
                         description: '身份证号码查询/生成'
                     }
+                },
+                {
+                    name: '磁力转换',
+                    path: '/url_convert',
+                    head: {
+                        keywords: [
+                            '迅雷地址互转',
+                            '快车地址互转',
+                            '旋风地址互转'
+                        ],
+                        description: '原始地址支持迅雷,快车,旋风的下载地址互转'
+                    }
+                },
+                {
+                    name: 'IP签名档',
+                    path: '/IPSignature',
+                    head: {
+                        keywords: ['IP签名档'],
+                        description: 'IP签名档'
+                    }
                 }
             ]
         },
