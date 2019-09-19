@@ -21,7 +21,7 @@
 
 如网站出现无法访问的情况，可尝试使用备用域名
 
-> [http://tools.imiku.me](http://tools.imiku.me)
+> [http://tool.imiku.me](http://tool.imiku.me)
 
 ## 介绍
 
