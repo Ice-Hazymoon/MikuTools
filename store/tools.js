@@ -327,6 +327,14 @@ export const state = () => {
                     }
                 },
                 {
+                    name: '盲人摸象加解密',
+                    path: '/sot1_encrypt',
+                    head: {
+                        keywords: ['盲人摸象', '转码', '加解密'],
+                        description: '在线盲人摸象加解密'
+                    }
+                },
+                {
                     name: '中英文加空格',
                     path: '/text_autospace',
                     head: {
