@@ -51,7 +51,7 @@ yarn generate
 
 > 对于不会打包程序的同学，准备好了一份打包好开箱即用的版本
 
-下载 [dist.7z](https://raw.githubusercontent.com/Ice-Hazymoon/MikuTools/master/dist.7z)，直接上传解压至虚拟主机或网站根目录即可使用
+下载 [dist.zip](https://raw.githubusercontent.com/Ice-Hazymoon/MikuTools/master/dist.zip)，直接上传解压至虚拟主机或网站根目录即可使用
 
 ## 其他
 
