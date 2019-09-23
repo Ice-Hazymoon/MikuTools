@@ -47,12 +47,6 @@ yarn install
 yarn generate
 ```
 
-## 不会前端开发或不想安装相关环境
-
-> 对于不会打包程序的同学，准备好了一份打包好开箱即用的版本
-
-下载 [dist.zip](https://raw.githubusercontent.com/Ice-Hazymoon/MikuTools/master/dist.zip)，直接上传解压至虚拟主机或网站根目录即可使用
-
 ## 其他
 
 Q: 后端什么时候开源？  
