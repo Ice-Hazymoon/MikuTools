@@ -105,10 +105,10 @@ export default {
             let flag = favorites.indexOf(path).value();
             if (flag === -1) {
                 favorites.push(path).value();
-                this.$toasted.show('收藏成功');
+                this.$noty.success('收藏成功');
             } else {
                 favorites.pull(path).value();
-                this.$toasted.show('取消收藏成功');
+                this.$noty.success('取消收藏成功');
             }
             this.$store.commit('SET_STORE', {
                 key: 'setting.favorites',

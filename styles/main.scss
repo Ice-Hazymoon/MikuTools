@@ -148,18 +148,6 @@ hr {
     border-bottom: 1px dashed var(--border-color);
 }
 
-// toasted
-.toasted-container{
-    top: 6% !important;
-    .miku-toasted{
-        justify-content: center !important;
-        @media (max-width: 700px) {
-            padding: 5px 20px !important;
-            line-height: 1.3 !important;
-        }
-    }
-}
-
 // 滚动条
 ::-webkit-scrollbar {
     width: 8px;

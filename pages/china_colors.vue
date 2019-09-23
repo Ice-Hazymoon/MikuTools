@@ -79,10 +79,10 @@ export default {
         doCopy(color, text) {
             this.$copyText(color).then(
                 () => {
-                    this.$toasted.show(text);
+                    this.$noty.success(text);
                 },
                 () => {
-                    this.$toasted.show('复制失败，请手动选择复制');
+                    this.$noty.error('复制失败，请手动选择复制');
                 }
             );
         },

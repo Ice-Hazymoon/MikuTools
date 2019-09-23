@@ -134,7 +134,6 @@ export default {
                 'https://github.com/necolas/normalize.css/',
                 'https://www.npmjs.com/package/tinycolor2',
                 'https://github.com/hilongjw/vue-lazyload',
-                'https://github.com/shakee93/vue-toasted',
                 'https://github.com/robinvdvleuten/vuex-persistedstate',
                 'https://github.com/m13253/JPEGreen'
             ]

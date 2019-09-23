@@ -254,10 +254,10 @@ export default {
         doCopy(text) {
             this.$copyText(text).then(
                 () => {
-                    this.$toasted.show('复制成功');
+                    this.$noty.success('复制成功');
                 },
                 () => {
-                    this.$toasted.show('复制失败，请手动选择复制');
+                    this.$noty.error('复制失败，请手动选择复制');
                 }
             );
         }
