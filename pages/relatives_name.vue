@@ -1,9 +1,9 @@
 <template>
     <div class="relatives_name">
         <nya-container title="亲戚称谓&关系计算器">
-            <nya-select v-model="type" fullwidth :items="{'default': '算称谓', 'chain': '找关系'}" label="选择处理方式" />
-            <nya-input v-show="type === 'default'" v-model="content" fullwidth autofocus autocomplete="off" label="要找的称谓" placeholder="如：爸爸的儿子的女儿" />
-            <nya-input v-show="!(type === 'default')" v-model="chain" fullwidth autofocus autocomplete="off" label="要找的关系" placeholder="如：奶奶" />
+            <nya-select v-model="type" class="mb-15" fullwidth :items="{'default': '算称谓', 'chain': '找关系'}" label="选择处理方式" />
+            <nya-input v-show="type === 'default'" v-model="content" class="mb-15" fullwidth autofocus autocomplete="off" label="要找的称谓" placeholder="如：爸爸的儿子的女儿" />
+            <nya-input v-show="!(type === 'default')" v-model="chain" class="mb-15" fullwidth autofocus autocomplete="off" label="要找的关系" placeholder="如：奶奶" />
             <div v-show="type === 'default'" class="btn-list">
                 <div class="nya-subtitle">
                     点击添加关系
@@ -42,7 +42,7 @@
                     <i class="eva eva-arrow-back-outline"></i>
                 </button>
             </div>
-            <nya-checkbox v-show="type === 'default'" v-model="reverse" label="对方称呼我" />
+            <nya-checkbox v-show="type === 'default'" v-model="reverse" class="mb-15" label="对方称呼我" />
             <br>
             <div v-show="type === 'default'">
                 <nya-radio-group v-model="sex">
@@ -122,11 +122,6 @@ export default {
 
 <style lang="scss">
 .relatives_name {
-    .nya-input,
-    .nya-select,
-    .nya-checkbox {
-        margin-bottom: 15px;
-    }
     .set {
         margin-bottom: 5px;
         .nya-checkbox {

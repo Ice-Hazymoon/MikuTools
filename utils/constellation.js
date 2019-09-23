@@ -1,5 +1,4 @@
 // 计算星座
-
 export default function(mon, day) {
     const days = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
     mon = parseInt(mon);

@@ -14,10 +14,10 @@
                 <button
                     type="button"
                     class="nya-btn"
-                    :disabled="requestIn"
+                    :disabled="loading"
                     @click="convert"
                 >
-                    {{ requestIn ? '转换中' : '开始转换' }}
+                    {{ loading ? '转换中' : '开始转换' }}
                 </button>
             </div>
             <div v-if="progress" class="progress">
@@ -65,13 +65,13 @@ export default {
             file: null,
             progress: null,
             videoWidth: 800,
-            requestIn: false
+            loading: false
         };
     },
     methods: {
         reset() {
             this.progress = null;
-            this.requestIn = false;
+            this.loading = false;
             (this.file = null), (this.results = '');
             this.videoUrl = null;
             this.n = null;
@@ -84,7 +84,7 @@ export default {
             this.videoUrl = URL.createObjectURL(file);
         },
         async convert() {
-            this.requestIn = true;
+            this.loading = true;
             const video = await this.createVideo(this.videoUrl);
             const time = video.duration;
             let flag = true;
@@ -97,7 +97,7 @@ export default {
                 const blob = await this.encodeGIF(video);
                 const gifUrl = URL.createObjectURL(blob);
                 this.results = gifUrl;
-                this.requestIn = false;
+                this.loading = false;
             } else {
                 this.reset();
             }

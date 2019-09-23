@@ -1,9 +1,9 @@
-const keywords = require('./keywords');
 // const fs = require('fs');
 // const path = require('path');
 import env from './env';
+import keywords from './keywords';
 
-export default {
+module.exports = {
     mode: 'universal',
     env: env,
     server: {
@@ -134,7 +134,7 @@ export default {
             ssr: false
         },
         {
-            src: './plugins/vue-toasted.js',
+            src: './plugins/vuejs-noty.js',
             ssr: false
         },
         {
@@ -148,6 +148,9 @@ export default {
         {
             src: '~/plugins/console.style.js',
             ssr: false
+        },
+        {
+            src: '~/plugins/vue-good-table.js'
         },
         {
             src: '~/plugins/baidupush.js',
@@ -196,7 +199,6 @@ export default {
         /*
          ** You can extend webpack config here
          */
-        // publicPath: 'https://mikutools.cdn.hazymoon.vip/',
         postcss: {
             plugins: {
                 'postcss-pxtorem': {

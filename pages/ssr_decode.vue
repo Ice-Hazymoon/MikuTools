@@ -3,6 +3,7 @@
         <nya-container title="SS/SSR/V2ray 配置解析">
             <nya-input
                 v-model.trim="configText"
+                class="mb-15"
                 label="请输入SSR/SS/V2ray 配置"
                 autocomplete="off"
                 autofocus
@@ -107,11 +108,3 @@ export default {
     }
 };
 </script>
-
-<style lang="scss">
-.ssr_decode {
-    .nya-input {
-        margin-bottom: 15px;
-    }
-}
-</style>

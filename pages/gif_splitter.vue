@@ -14,10 +14,10 @@
                 <button
                     type="button"
                     class="nya-btn"
-                    :disabled="requestIn"
+                    :disabled="loading"
                     @click="start"
                 >
-                    {{ requestIn ? '分解中' : '开始分解' }}
+                    {{ loading ? '分解中' : '开始分解' }}
                 </button>
             </div>
         </nya-container>
@@ -42,7 +42,7 @@ export default {
             n: '',
             file: null,
             progress: '',
-            requestIn: false,
+            loading: false,
             results: []
         };
     },
@@ -54,7 +54,8 @@ export default {
             if (/gif$/.test(file.type)) {
                 this.file = file;
             } else {
-                this.$modal.show('dialog', {
+                this.$swal({
+                    type: 'error',
                     title: '识别失败',
                     text: `ERROR: 该文件获取不是一张GIF图片`
                 });
@@ -63,7 +64,7 @@ export default {
         },
         start() {
             if (!this.file) return false;
-            this.requestIn = true;
+            this.loading = true;
             this.results = [];
             this.progress = 'Loadging...';
             this.loadFile().then(gifImg => {
@@ -75,7 +76,7 @@ export default {
                         img_list.push(rub.get_canvas().toDataURL());
                     }
                     this.results = img_list;
-                    this.requestIn = false;
+                    this.loading = false;
                 });
             });
         },

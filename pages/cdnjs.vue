@@ -1,6 +1,6 @@
 <template>
     <div class="cdnjs">
-        <no-ssr>
+        <client-only>
             <modal name="viewall" classes="cdnjs_modal" height="auto">
                 <div class="title">
                     请自行选择一个速度最佳的使用 <div class="start-speed" @click="startSpeed">
@@ -27,7 +27,7 @@
                     </table>
                 </div>
             </modal>
-        </no-ssr>
+        </client-only>
         <nya-container title="前端CDN查询">
             <div class="inputbtn">
                 <nya-input

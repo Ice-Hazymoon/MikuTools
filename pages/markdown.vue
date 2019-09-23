@@ -1,6 +1,6 @@
 <template>
     <div class="markdown">
-        <no-ssr>
+        <client-only>
             <mavon-editor
                 ref="md"
                 v-model="content"
@@ -11,7 +11,7 @@
                 :external-link="externalLink"
                 @change="handleHtml"
             />
-        </no-ssr>
+        </client-only>
         <div class="btn-list">
             <button class="nya-btn" @click="downloadHtml">
                 下载 HTML 文件

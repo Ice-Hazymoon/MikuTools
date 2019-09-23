@@ -64,6 +64,7 @@
 
 <script>
 import Nzh from 'nzh';
+
 export default {
     name: 'NumberToZh',
     head() {
@@ -147,7 +148,8 @@ export default {
     methods: {
         isZhNum() {
             if (!this.hanzi.length) {
-                this.$modal.show('dialog', {
+                this.$swal({
+                    type: 'error',
                     title: '转换失败',
                     text: `ERROR: 你还没有输入`
                 });
@@ -160,7 +162,8 @@ export default {
             } else if (regexupper.test(this.hanzi)) {
                 this.numResult = Nzh.cn.decodeB(this.hanzi);
             } else {
-                this.$modal.show('dialog', {
+                this.$swal({
+                    type: 'error',
                     title: '转换失败',
                     text: `ERROR: 请输入正确的大小写中文数字`
                 });

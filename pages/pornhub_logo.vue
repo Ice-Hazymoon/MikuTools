@@ -13,9 +13,9 @@
             <div class="nya-subtitle">
                 文字大小
             </div>
-            <no-ssr>
+            <client-only>
                 <vue-slider v-model="fontSize" lazy :min="10" :max="200" />
-            </no-ssr>
+            </client-only>
             <nya-checkbox v-model="vertical" label="使用竖版样式" />
             <nya-checkbox v-model="transparent" label="使用透明背景" />
             <div class="nya-btn" @click="convert">

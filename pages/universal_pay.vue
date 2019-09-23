@@ -3,7 +3,7 @@
         <nya-container title="收款码合并">
             <nya-input
                 v-model="qqFile"
-                class="upfile"
+                class="upfile mb-15"
                 type="file"
                 name="qrcode"
                 accept="image/*"
@@ -14,7 +14,7 @@
             />
             <nya-input
                 v-model="weixinFile"
-                class="upfile"
+                class="upfile mb-15"
                 type="file"
                 name="qrcode"
                 accept="image/*"
@@ -25,7 +25,7 @@
             />
             <nya-input
                 v-model="alipayFile"
-                class="upfile"
+                class="upfile mb-15"
                 type="file"
                 name="qrcode"
                 accept="image/*"
@@ -37,10 +37,10 @@
             <button
                 type="button"
                 class="nya-btn"
-                :disabled="requestIn"
+                :disabled="loading"
                 @click="synthetic"
             >
-                {{ requestIn ? '合成中' : '开始合成' }}
+                {{ loading ? '合成中' : '开始合成' }}
             </button>
         </nya-container>
 
@@ -72,7 +72,7 @@ export default {
     },
     data() {
         return {
-            requestIn: false,
+            loading: false,
             qqFile: '',
             weixinFile: '',
             alipayFile: '',
@@ -89,7 +89,7 @@ export default {
     methods: {
         synthetic() {
             if (this.data.qq && this.data.weixin && this.data.alipay) {
-                this.requestIn = true;
+                this.loading = true;
                 this.short_url = '';
                 this.qrcodeUrl = '';
 
@@ -102,10 +102,10 @@ export default {
                 this.$axios
                     .post('/short_link', {
                         url: this.url,
-                        api: 2
+                        api: 'dwz_cn'
                     })
                     .then(e => {
-                        this.requestIn = false;
+                        this.loading = false;
                         const short_url = e.data.data;
                         const QRData = QR.imageSync(short_url, {
                             type: 'png',
@@ -117,10 +117,11 @@ export default {
                             QRData.toString('base64');
                     })
                     .catch(err => {
-                        this.requestIn = false;
-                        this.$modal.show('dialog', {
+                        this.loading = false;
+                        this.$swal({
+                            type: 'error',
                             title: '获取失败',
-                            text: `ERROR: ${err}`
+                            text: err
                         });
                         const short_url = this.url;
                         const QRData = QR.imageSync(short_url, {
@@ -133,7 +134,8 @@ export default {
                             QRData.toString('base64');
                     });
             } else {
-                this.$modal.show('dialog', {
+                this.$swal({
+                    type: 'error',
                     title: '合成失败',
                     text: `ERROR: 请选择收款码`
                 });
@@ -154,7 +156,8 @@ export default {
                         if (qqRegex.test(url)) {
                             this.data.qq = url;
                         } else {
-                            this.$modal.show('dialog', {
+                            this.$swal({
+                                type: 'error',
                                 title: '识别失败',
                                 text: `ERROR: 可能不是一个QQ收款码`
                             });
@@ -165,7 +168,8 @@ export default {
                         if (weixinRegex.test(url)) {
                             this.data.weixin = url;
                         } else {
-                            this.$modal.show('dialog', {
+                            this.$swal({
+                                type: 'error',
                                 title: '识别失败',
                                 text: `ERROR: 可能不是一个微信收款码`
                             });
@@ -176,7 +180,8 @@ export default {
                         if (alipayRegex.test(url)) {
                             this.data.alipay = url;
                         } else {
-                            this.$modal.show('dialog', {
+                            this.$swal({
+                                type: 'error',
                                 title: '识别失败',
                                 text: `ERROR: 可能不是一个支付宝收款码`
                             });
@@ -185,7 +190,8 @@ export default {
                     }
                 })
                 .catch(() => {
-                    this.$modal.show('dialog', {
+                    this.$swal({
+                        type: 'error',
                         title: '识别失败',
                         text: `ERROR: 可能不是一个二维码，或由于二维码内容过于复杂`
                     });
@@ -201,9 +207,6 @@ export default {
         display: block;
         max-width: 100%;
         margin: 0 auto;
-    }
-    .nya-input {
-        margin-bottom: 15px;
     }
 }
 </style>

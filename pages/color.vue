@@ -10,12 +10,12 @@
                 fullwidth
                 @input="handleColorVal"
             />
-            <no-ssr>
+            <client-only>
                 <slider-picker :value="colors" @input="updateColor" />
-            </no-ssr>
-            <no-ssr>
+            </client-only>
+            <client-only>
                 <vue-slider v-model="alpha" :interval="0.1" lazy :min="0" :max="1" @change="updateAlpha" />
-            </no-ssr>
+            </client-only>
             <nya-input
                 v-model="n"
                 type="file"

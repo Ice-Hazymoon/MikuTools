@@ -13,10 +13,10 @@
                 <button
                     type="button"
                     class="nya-btn"
-                    :disabled="requestIn"
+                    :disabled="loading"
                     @click="updatePreview"
                 >
-                    {{ requestIn ? '生成中' : '开始生成' }}
+                    {{ loading ? '生成中' : '开始生成' }}
                 </button>
             </div>
             <nya-checkbox v-model="options.gif" label="使用 GIF 格式" />
@@ -24,23 +24,23 @@
             <div class="nya-subtitle">
                 抖动幅度
             </div>
-            <no-ssr>
+            <client-only>
                 <vue-slider v-model="options.seed" lazy :min="1" :max="100" @change="updatePreview" />
-            </no-ssr>
+            </client-only>
             <br>
             <div class="nya-subtitle">
                 字体大小
             </div>
-            <no-ssr>
+            <client-only>
                 <vue-slider v-model="options.fontSize" lazy :min="18" :max="200" @change="updatePreview" />
-            </no-ssr>
+            </client-only>
             <br>
             <div class="nya-subtitle">
                 背景颜色
             </div>
-            <no-ssr>
+            <client-only>
                 <chrome-picker :value="colors" @input="updateColor" />
-            </no-ssr>
+            </client-only>
         </nya-container>
 
         <nya-container v-if="options.gif ? gifUrl : imgUrl" title="生成成功" class="preview">
@@ -78,7 +78,7 @@ export default {
     },
     data() {
         return {
-            requestIn: false,
+            loading: false,
             colors: '#000',
             options: {
                 word: 'Hello MikuTools',
@@ -99,7 +99,7 @@ export default {
     },
     watch: {
         'options.gif'(val) {
-            this.requestIn = true;
+            this.loading = true;
             if (val) {
                 this.createGif();
             } else {
@@ -123,17 +123,17 @@ export default {
 
             canvasTarget.toBlob(url => {
                 this.imgUrl = URL.createObjectURL(url);
-                this.requestIn = false;
+                this.loading = false;
             });
         },
         createGif() {
             this.dytext.createGif(gif => {
                 this.gifUrl = gif;
-                this.requestIn = false;
+                this.loading = false;
             });
         },
         updatePreview() {
-            this.requestIn = true;
+            this.loading = true;
             this.init();
             this.dytext.seed = 0.05 * this.options.seed;
             if (this.options.gif) {

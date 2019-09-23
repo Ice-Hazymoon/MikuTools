@@ -1,13 +1,13 @@
 <template>
     <div class="acg_meme">
-        <no-ssr>
+        <client-only>
             <modal name="rbq" classes="rbq_modal" height="auto" width="400">
                 <div class="title">
                     生成成功，如果长时间没有下载请自行<b>长按图片</b>保存
                 </div>
                 <img v-if="results" :src="results" alt="rbq">
             </modal>
-        </no-ssr>
+        </client-only>
         <nya-container title="ACG表情包制作">
             <nya-input
                 v-model.trim="text"
@@ -26,23 +26,23 @@
             <div class="nya-subtitle">
                 字体大小
             </div>
-            <no-ssr>
+            <client-only>
                 <vue-slider v-model="options.fontSize" lazy :min="15" :max="30" />
-            </no-ssr>
+            </client-only>
 
             <div class="nya-subtitle">
                 文本间距
             </div>
-            <no-ssr>
+            <client-only>
                 <vue-slider v-model="options.letterSpacing" lazy :min="0" :max="10" />
-            </no-ssr>
+            </client-only>
 
             <div class="nya-subtitle">
                 文字颜色
             </div>
-            <no-ssr>
+            <client-only>
                 <compact-picker v-model="colors" @input="updateColor" />
-            </no-ssr>
+            </client-only>
         </nya-container>
 
         <nya-container title="表情包预览">
@@ -52,7 +52,7 @@
                 </div>
                 <span>加载全部模板可能会消耗一定的流量</span>
             </div>
-            <no-ssr v-else>
+            <client-only v-else>
                 <ul class="template-list">
                     <li v-for="(item, index) in templateFiles" :key="index">
                         <div class="box">
@@ -71,7 +71,7 @@
                         </div>
                     </li>
                 </ul>
-            </no-ssr>
+            </client-only>
         </nya-container>
 
         <nya-container title="说明">
@@ -300,8 +300,6 @@ export default {
                 scale: 2.5
             })
                 .then(e => {
-                    // this.results = e.toDataURL();
-                    // this.$modal.show('rbq');
                     this.$store.commit('SET_STORE', {
                         key: 'globalLoading',
                         value: false
@@ -313,9 +311,10 @@ export default {
                         key: 'globalLoading',
                         value: false
                     });
-                    this.$modal.show('dialog', {
+                    this.$swal({
+                        type: 'error',
                         title: '生成失败',
-                        text: `ERROR: ${err}`
+                        text: err
                     });
                 });
         },

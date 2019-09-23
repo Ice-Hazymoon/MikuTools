@@ -53,6 +53,9 @@ export const mutations = {
             .set(n.key, n.value)
             .value();
     },
+    loadingComponent(state, n) {
+        state.globalLoading = n;
+    },
     switchTheme(state, n) {
         if (n !== undefined) {
             state.dark = n;

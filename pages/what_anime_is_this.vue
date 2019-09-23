@@ -11,8 +11,8 @@
                     placeholder="点击这里上传文件"
                     @change="handleChange"
                 />
-                <button type="button" class="nya-btn" :disabled="requestIn" @click="getAnime">
-                    {{ requestIn ? '获取中' : '开始获取' }}
+                <button type="button" class="nya-btn" :disabled="loading" @click="getAnime">
+                    {{ loading ? '获取中' : '开始获取' }}
                 </button>
             </div>
             <div v-if="preview" class="nya-subtitle">
@@ -86,7 +86,7 @@ export default {
             n: '',
             preview: '',
             docs: [],
-            requestIn: false
+            loading: false
         };
     },
     methods: {
@@ -97,7 +97,8 @@ export default {
             const size = (file.size * 1.34) / 1024 / 1024;
             if (size > 1) {
                 this.n = '';
-                this.$modal.show('dialog', {
+                this.$swal({
+                    type: 'error',
                     title: '识别失败',
                     text: `ERROR: 请选择大小在 750KB 以内的图片，可尝试裁剪图片或更换图片查询`
                 });
@@ -116,7 +117,7 @@ export default {
         },
         getAnime() {
             if (!this.preview) return false;
-            this.requestIn = true;
+            this.loading = true;
             this.$axios
                 .post(
                     'https://trace.moe/api/search',
@@ -126,19 +127,21 @@ export default {
                     {
                         headers: {
                             'Content-Type': 'application/json'
-                        }
+                        },
+                        auth: false
                     }
                 )
                 .then(e => {
-                    this.requestIn = false;
+                    this.loading = false;
                     this.docs = e.data.docs;
                 })
                 .catch(err => {
-                    this.$modal.show('dialog', {
+                    this.$swal({
+                        type: 'error',
                         title: '识别失败',
                         text: `ERROR: ${err}`
                     });
-                    this.requestIn = false;
+                    this.loading = false;
                 });
         },
         secToTime(s) {
@@ -169,8 +172,8 @@ export default {
             return str;
         },
         myCount() {
-            if (this.requestIn) return false;
-            this.requestIn = true;
+            if (this.loading) return false;
+            this.loading = true;
             this.$axios
                 .post(
                     'https://trace.moe/api/me',
@@ -178,13 +181,15 @@ export default {
                     {
                         headers: {
                             'Content-Type': 'application/json'
-                        }
+                        },
+                        auth: false
                     }
                 )
                 .then(e => {
-                    this.requestIn = false;
+                    this.loading = false;
                     let result = e.data;
-                    this.$modal.show('dialog', {
+                    this.$swal({
+                        type: 'error',
                         title: '我的次数',
                         text: `总次数剩余：${result.quota} 每分钟剩余：${
                             result.limit
@@ -192,8 +197,9 @@ export default {
                     });
                 })
                 .catch(err => {
-                    this.requestIn = false;
-                    this.$modal.show('dialog', {
+                    this.loading = false;
+                    this.$swal({
+                        type: 'error',
                         title: '获取失败',
                         text: `ERROR: ${err}`
                     });

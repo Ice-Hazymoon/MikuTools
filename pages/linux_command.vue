@@ -1,6 +1,6 @@
 <template>
     <div class="linux_command">
-        <no-ssr>
+        <client-only>
             <modal name="readCommand" classes="readCommand_modal" height="auto" width="800px" scrollable adaptive>
                 <div class="title">
                     {{ command }} 命令详情
@@ -10,7 +10,7 @@
                     关闭
                 </div>
             </modal>
-        </no-ssr>
+        </client-only>
         <nya-container title="Linux 命令查询">
             <nya-input
                 v-model.trim="searchVal"
@@ -111,7 +111,8 @@ export default {
                     this.geting = false;
                 })
                 .catch(err => {
-                    this.$modal.show('dialog', {
+                    this.$swal({
+                        type: 'error',
                         title: '下载失败',
                         text: `ERROR: 获取数据失败，请刷新页面重试 ${err}`
                     });
@@ -136,7 +137,8 @@ export default {
                     this.$modal.show('readCommand');
                 })
                 .catch(err => {
-                    this.$modal.show('dialog', {
+                    this.$swal({
+                        type: 'error',
                         title: '查询失败',
                         text: `ERROR: ${err}`
                     });

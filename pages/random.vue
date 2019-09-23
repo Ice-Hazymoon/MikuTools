@@ -1,10 +1,10 @@
 <template>
     <div class="random">
         <nya-container title="随机数生成">
-            <nya-input v-model.trim="min" fullwidth type="number" label="最小值" placeholder="0" autocomplete="off" />
-            <nya-input v-model.trim="max" fullwidth type="number" label="最大值" placeholder="100" autocomplete="off" />
-            <nya-input v-model.trim="num" fullwidth type="number" label="生成数量" placeholder="10" autocomplete="off" />
-            <nya-checkbox v-model="repeat" label="是否重复" />
+            <nya-input v-model.trim="min" class="mb-15" fullwidth type="number" label="最小值" placeholder="0" autocomplete="off" />
+            <nya-input v-model.trim="max" class="mb-15" fullwidth type="number" label="最大值" placeholder="100" autocomplete="off" />
+            <nya-input v-model.trim="num" class="mb-15" fullwidth type="number" label="生成数量" placeholder="10" autocomplete="off" />
+            <nya-checkbox v-model="repeat" style="display: block;" class="mb-15" label="是否重复" />
             <nya-checkbox v-model="br" label="使用换行分组" />
             <div class="nya-btn" @click="gen">
                 生成随机数
@@ -47,7 +47,8 @@ export default {
                 !/[0-9]+/.test(min) ||
                 !/[0-9]+/.test(max)
             ) {
-                this.$modal.show('dialog', {
+                this.$swal({
+                    type: 'error',
                     title: '生成失败',
                     text: `ERROR: 请输入合法的数字`
                 });
@@ -55,7 +56,8 @@ export default {
             }
 
             if (max < min) {
-                this.$modal.show('dialog', {
+                this.$swal({
+                    type: 'error',
                     title: '生成失败',
                     text: `ERROR: 最大值不能小于最小值`
                 });
@@ -76,7 +78,8 @@ export default {
                     Math.abs(max === 0 ? 1 : max) +
                         Math.abs(min === 0 ? 1 : min)
                 ) {
-                    this.$modal.show('dialog', {
+                    this.$swal({
+                        type: 'error',
                         title: '生成失败',
                         text: `ERROR: 不重复的生成数量不能超过最大值与最小值之间的绝对值`
                     });
@@ -96,15 +99,3 @@ export default {
     }
 };
 </script>
-
-<style lang="scss">
-.random {
-    .nya-input {
-        margin-bottom: 15px;
-    }
-    .nya-checkbox {
-        display: block;
-        margin-bottom: 15px;
-    }
-}
-</style>

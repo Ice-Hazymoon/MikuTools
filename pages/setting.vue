@@ -73,7 +73,7 @@ export default {
             try {
                 config = JSON.parse(Buffer.from(config, 'base64').toString());
             } catch (error) {
-                this.$toasted.error('配置信息无效，请重新确认');
+                this.$noty.error('配置信息无效，请重新确认');
                 return false;
             }
             this.$store.commit('SET_STORE', {
@@ -85,7 +85,7 @@ export default {
                 value: config.dark
             });
             this.init();
-            this.$toasted.success('导入成功');
+            this.$noty.success('导入成功');
         },
         clearCache() {
             localStorage.removeItem('mikudb');

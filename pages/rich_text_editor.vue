@@ -1,6 +1,6 @@
 <template>
     <div class="rich_text_editor">
-        <no-ssr>
+        <client-only>
             <quill-editor ref="myTextEditor" v-model="content" :options="editorOption" />
             <button class="nya-btn" @click="showCode = !showCode">
                 {{ showCode ? '隐藏' : '显示' }} HTML 代码
@@ -8,7 +8,7 @@
             <div v-if="showCode" class="quill-code">
                 <code class="hljs xml" v-html="contentCode"></code>
             </div>
-        </no-ssr>
+        </client-only>
     </div>
 </template>
 

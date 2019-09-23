@@ -49,16 +49,16 @@
         <div class="nya-subtitle">
             高斯模糊
         </div>
-        <no-ssr>
+        <client-only>
             <vue-slider :value="$store.state.setting.bg.blur" lazy :min="0" :max="100" @change="handleChange('setting.bg.blur', $event)" />
-        </no-ssr>
+        </client-only>
 
         <div class="nya-subtitle">
             透明度
         </div>
-        <no-ssr>
+        <client-only>
             <vue-slider :value="$store.state.setting.bg.opacity" lazy :min="1" :max="100" @change="handleChange('setting.bg.opacity', $event)" />
-        </no-ssr>
+        </client-only>
     </nya-container>
 </template>
 

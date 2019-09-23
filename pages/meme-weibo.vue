@@ -80,10 +80,10 @@
             <button
                 type="button"
                 class="nya-btn"
-                :disabled="requestIn"
+                :disabled="loading"
                 @click="conversion"
             >
-                {{ requestIn ? '生成中' : '开始生成' }}
+                {{ loading ? '生成中' : '开始生成' }}
             </button>
         </nya-container>
 
@@ -105,7 +105,7 @@ export default {
             vip: 'icon_member7',
             daren: true,
             renzheng: true,
-            requestIn: false,
+            loading: false,
             n: '',
             avatar: require('!file-loader!~/assets/avatar.jpg'),
             vipList: {
@@ -124,18 +124,19 @@ export default {
     methods: {
         conversion() {
             this.img = '';
-            this.requestIn = true;
+            this.loading = true;
             domtoimage
                 .toPng(this.$refs.weibo)
                 .then(e => {
                     this.img = e;
-                    this.requestIn = false;
+                    this.loading = false;
                 })
                 .catch(err => {
-                    this.requestIn = false;
-                    this.$modal.show('dialog', {
+                    this.loading = false;
+                    this.$swal({
+                        type: 'error',
                         title: '生成失败',
-                        text: `ERROR: ${err}`
+                        text: err
                     });
                 });
         },

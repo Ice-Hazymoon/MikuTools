@@ -19,12 +19,12 @@
             <div class="nya-subtitle">
                 文字大小
             </div>
-            <no-ssr>
+            <client-only>
                 <vue-slider v-model="fontSize" lazy :min="60" :max="200" />
-            </no-ssr>
+            </client-only>
             <nya-checkbox v-model="transparent" label="使用透明背景" />
             <div class="nya-btn" @click="convert">
-                {{ requestIn ? '生成中' : '立即生成' }}
+                {{ loading ? '生成中' : '立即生成' }}
             </div>
         </nya-container>
 
@@ -68,24 +68,25 @@ export default {
             results: '',
             fontSize: 70,
             transparent: false,
-            requestIn: false
+            loading: false
         };
     },
     methods: {
         convert() {
-            this.requestIn = true;
+            this.loading = true;
             domtoimage
                 .toPng(this.$refs.preview)
                 .then(e => {
                     this.results = e;
-                    this.requestIn = false;
+                    this.loading = false;
                     createDownload(e, 'logo.png');
                 })
                 .catch(err => {
-                    this.requestIn = false;
-                    this.$modal.show('dialog', {
+                    this.loading = false;
+                    this.$swal({
+                        type: 'error',
                         title: '生成失败',
-                        text: `ERROR: ${err}`
+                        text: err
                     });
                 });
         }

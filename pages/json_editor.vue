@@ -1,7 +1,7 @@
 <template>
     <div class="json_editor">
         <div ref="jsonEditor" class="jsonEditor"></div>
-        <button class="nya-btn" @click="download">
+        <button class="nya-btn mt-15" @click="download">
             下载 JSON 文件
         </button>
     </div>

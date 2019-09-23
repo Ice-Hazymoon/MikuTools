@@ -1,7 +1,7 @@
 <template>
     <div class="image_editor">
         <div id="tui-image-editor"></div>
-        <div v-if="requestIn" class="loading">
+        <div v-if="loading" class="loading">
             <nya-loading />
             <div>编辑器加载中···</div>
         </div>
@@ -102,7 +102,7 @@ export default {
     },
     data() {
         return {
-            requestIn: false,
+            loading: false,
             instance: null,
             hide: false
         };
@@ -140,7 +140,7 @@ export default {
             });
         },
         async initNode() {
-            this.requestIn = true;
+            this.loading = true;
             try {
                 await this.createScript(
                     'https://cdnjs.loli.net/ajax/libs/fabric.js/1.6.7/fabric.js'
@@ -164,10 +164,11 @@ export default {
                     'https://uicdn.toast.com/tui-color-picker/v2.2.0/tui-color-picker.css'
                 );
                 this.initEdit();
-                this.requestIn = false;
+                this.loading = false;
                 document.body.classList.add('_tui_');
             } catch (error) {
-                this.$modal.show('dialog', {
+                this.$swal({
+                    type: 'error',
                     title: '加载失败',
                     text: `ERROR: 编辑器加载失败，请检查网络链接或刷新后重试`
                 });

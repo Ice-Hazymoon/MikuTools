@@ -1,9 +1,9 @@
 <template>
     <div class="lifecount">
         <nya-container title="人生小格">
-            <no-ssr>
+            <client-only>
                 <date-picker v-model="date" class="nya-input" :editable="false" placeholder="选择你的生日" :default-value="defaultValue" value-type="format" :not-before="from" :not-after="to" />
-            </no-ssr>
+            </client-only>
         </nya-container>
 
         <nya-container v-if="dateData" title="已经过去了">

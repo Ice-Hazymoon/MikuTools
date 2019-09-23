@@ -16,7 +16,7 @@
             <i v-if="collected" class="eva eva-star"></i>
             <i v-else class="eva eva-star-outline"></i>
         </div>
-        <no-ssr>
+        <client-only>
             <modal class="code" name="code" height="auto" width="500" reset adaptive>
                 <div class="title">
                     将以下代码放到你的网页中
@@ -51,7 +51,7 @@
                     <a :href="`https://www.linkedin.com/shareArticle?title=${shareData.title}&summary=${shareData.content}&mini=true&url=${shareData.url}&ro=true`" target="_blank" rel="noopener noreferrer">Linkedin</a>
                 </div>
             </modal>
-        </no-ssr>
+        </client-only>
     </div>
 </template>
 

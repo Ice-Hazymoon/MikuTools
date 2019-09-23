@@ -33,6 +33,7 @@
 </template>
 
 <script>
+import validator from 'validator';
 export default {
     name: 'LineStickerDownload',
     head() {
@@ -41,14 +42,13 @@ export default {
     data() {
         return {
             link: '',
-            requestIn: false
+            loading: false
         };
     },
     computed: {
         results() {
-            const regex = /https?:\/\/[-A-Za-z0-9+&@#/%?=~_|!:,.;]+[-A-Za-z0-9+&@#/%=~_|]/;
             let id = this.link.match(/(product|sticker)\/[0-9]+/);
-            if (regex.test(this.link) && id) {
+            if (validator.isURL(this.link) && id) {
                 id = id[0].replace(/(product|sticker)\//, '');
                 return [
                     [

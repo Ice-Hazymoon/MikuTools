@@ -2,6 +2,7 @@
     <div class="hex_convert">
         <nya-container title="进制转换">
             <nya-input
+                class="mb-15"
                 type="number"
                 autocomplete="off"
                 label="二进制"
@@ -12,6 +13,7 @@
             />
             <br>
             <nya-input
+                class="mb-15"
                 type="number"
                 autocomplete="off"
                 label="八进制"
@@ -22,6 +24,7 @@
             />
             <br>
             <nya-input
+                class="mb-15"
                 type="number"
                 autocomplete="off"
                 label="十进制"
@@ -33,6 +36,7 @@
             <br>
             <nya-input
                 v-model="hex"
+                class="mb-15"
                 type="text"
                 autocomplete="off"
                 label="十六进制"
@@ -43,6 +47,7 @@
             />
             <br>
             <nya-input
+                class="mb-15"
                 type="text"
                 autocomplete="off"
                 label="三十二进制"
@@ -108,10 +113,3 @@ export default {
     }
 };
 </script>
-<style lang="scss">
-.hex_convert {
-    .nya-input {
-        margin-bottom: 15px;
-    }
-}
-</style>

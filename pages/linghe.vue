@@ -13,10 +13,10 @@
                 <button
                     type="button"
                     class="nya-btn"
-                    :disabled="requestIn"
+                    :disabled="loading"
                     @click="create"
                 >
-                    {{ requestIn ? '生成中' : '开始生成' }}
+                    {{ loading ? '生成中' : '开始生成' }}
                 </button>
             </div>
 
@@ -38,16 +38,16 @@
             <div class="nya-subtitle">
                 字体大小
             </div>
-            <no-ssr>
+            <client-only>
                 <vue-slider v-model="fontSize" lazy :min="30" :max="150" />
-            </no-ssr>
+            </client-only>
 
             <div class="nya-subtitle">
                 文字颜色
             </div>
-            <no-ssr>
+            <client-only>
                 <compact-picker v-model="colors" @input="updateColor" />
-            </no-ssr>
+            </client-only>
 
             <div class="nya-subtitle">
                 预览
@@ -103,7 +103,7 @@ export default {
             results: '',
             file: null,
             bgimg: '',
-            requestIn: false
+            loading: false
         };
     },
     computed: {
@@ -124,21 +124,22 @@ export default {
     },
     methods: {
         create() {
-            if (this.requestIn) return false;
-            this.requestIn = true;
+            if (this.loading) return false;
+            this.loading = true;
             this.results = '';
             domtoimage
                 .toPng(this.$refs.preview)
                 .then(e => {
                     this.results = e;
-                    this.requestIn = false;
+                    this.loading = false;
                     createDownload(e, 'linghe.png');
                 })
                 .catch(err => {
-                    this.requestIn = false;
-                    this.$modal.show('dialog', {
+                    this.loading = false;
+                    this.$swal({
+                        type: 'error',
                         title: '生成失败',
-                        text: `ERROR: ${err}`
+                        text: err
                     });
                 });
         },

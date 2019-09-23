@@ -2,20 +2,20 @@
     <div class="timestamp">
         <nya-container title="时间戳转换">
             <div v-if="chooseManually">
-                <no-ssr>
-                    <date-picker v-model="date" type="datetime" class="nya-input date-picker" format="YYYY-MM-DD hh:mm:ss" confirm :editable="false" placeholder="选择日期" :default-value="defaultValue" value-type="timestamp" />
-                </no-ssr>
+                <client-only>
+                    <date-picker v-model="date" type="datetime" class="nya-input date-picker mt-15" format="YYYY-MM-DD hh:mm:ss" confirm :editable="false" placeholder="选择日期" :default-value="defaultValue" value-type="timestamp" />
+                </client-only>
             </div>
             <div v-else>
                 <div class="inputbtn">
-                    <nya-input v-model.trim="current" fullwidth type="number" autofocus :label="`输入时间戳(${useSec ? '秒' : '毫秒'})`" :placeholder="`请输入时间戳(${useSec ? '秒' : '毫秒'})`" autocomplete="off" @keyup.enter="download" />
+                    <nya-input v-model.trim="current" fullwidth type="number" autofocus :label="`输入时间戳(${useSec ? '秒' : '毫秒'})`" :placeholder="`请输入时间戳(${useSec ? '秒' : '毫秒'})`" autocomplete="off" />
                     <button type="button" class="nya-btn" @click="setDate">
                         当前时间
                     </button>
                 </div>
-                <nya-checkbox v-model="useSec" label="使用秒(s)为单位" />
+                <nya-checkbox v-model="useSec" class="mt-15" label="使用秒(s)为单位" />
             </div>
-            <nya-checkbox v-model="chooseManually" label="手动选择时间" />
+            <nya-checkbox v-model="chooseManually" class="mt-15" label="手动选择时间" />
         </nya-container>
 
         <nya-container v-show="results" title="结果">
@@ -57,9 +57,9 @@ export default {
                 return this.date;
             } else {
                 if (this.useSec) {
-                    return dayjs.unix(time).format('YYYY-MM-DD hh:mm:ss');
+                    return dayjs.unix(time).format('YYYY-MM-DD HH:mm:ss');
                 } else {
-                    return dayjs(time).format('YYYY-MM-DD hh:mm:ss');
+                    return dayjs(time).format('YYYY-MM-DD HH:mm:ss');
                 }
             }
         }
@@ -78,14 +78,8 @@ export default {
 
 <style lang="scss">
 .timestamp {
-    .nya-checkbox {
-        margin-top: 15px;
-    }
     .date-picker {
         width: 100%;
-    }
-    .date-picker {
-        margin-top: 15px;
     }
     .nya-input {
         width: 100%;

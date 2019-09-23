@@ -18,15 +18,15 @@
                     保存
                 </button>
             </div>
-            <div class="nya-subtitle">
+            <div class="nya-subtitle mt-15">
                 选择 Logo 样式
             </div>
             <div class="radio-group">
                 <nya-radio-group v-model="style">
-                    <nya-radio value="logo_en" label="英文" />
-                    <nya-radio value="logo_en_2" label="英文2" />
-                    <nya-radio value="logo_en_shadow" label="英文带阴影" />
-                    <nya-radio value="logo_cn" label="中文" />
+                    <nya-radio class="mr-15" value="logo_en" label="英文" />
+                    <nya-radio class="mr-15" value="logo_en_2" label="英文2" />
+                    <nya-radio class="mr-15" value="logo_en_shadow" label="英文带阴影" />
+                    <nya-radio class="mr-15" value="logo_cn" label="中文" />
                 </nya-radio-group>
             </div>
         </nya-container>
@@ -152,17 +152,3 @@ export default {
     }
 };
 </script>
-
-<style lang="scss">
-.cyberpunk2077 {
-    .nya-subtitle {
-        margin-top: 15px;
-    }
-    .canvas-container {
-        border: 1px solid var(--t1);
-    }
-    .nya-radio {
-        margin-right: 15px;
-    }
-}
-</style>

@@ -1,20 +1,20 @@
 <template>
     <div class="encoding">
         <nya-container title="文本在线编码解码">
-            <nya-input v-model="content" fullwidth rows="5" type="textarea" autofocus autocomplete="off" label="待处理的内容" placeholder="请输入要处理的内容" />
+            <nya-input v-model="content" class="mb-15" fullwidth rows="5" type="textarea" autofocus autocomplete="off" label="待处理的内容" placeholder="请输入要处理的内容" />
             <br>
-            <nya-select v-model="encodingType" fullwidth :items="list" label="选择编码方式" />
+            <nya-select v-model="encodingType" class="mb-15" fullwidth :items="list" label="选择编码方式" />
             <br>
             <button
                 type="button"
-                class="nya-btn"
+                class="nya-btn mr-15"
                 @click="encoding"
             >
                 编码
             </button>
             <button
                 type="button"
-                class="nya-btn"
+                class="nya-btn mr-15"
                 @click="decoding"
             >
                 解码
@@ -69,15 +69,3 @@ export default {
     }
 };
 </script>
-
-<style lang="scss">
-.encoding {
-    .nya-input,
-    .nya-select {
-        margin-bottom: 15px;
-    }
-    .nya-btn {
-        margin-right: 10px;
-    }
-}
-</style>

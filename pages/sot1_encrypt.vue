@@ -4,17 +4,15 @@
             <nya-input
                 v-model.trim="value"
                 label="请输入待加解密字符"
-                placeholder="这是一个例子/⣨⢿⢙⣦⢘⢯⣤⢸⢀⣤⢸⢪⣤⢾⢋⣩⣦⣥⢭⢐"
+                placeholder="这是一个例子 / ⣨⢿⢙⣦⢘⢯⣤⢸⢀⣤⢸⢪⣤⢾⢋⣩⣦⣥⢭⢐"
                 autocomplete="off"
                 autofocus
                 fullwidth
                 rows="5"
                 type="textarea"
             />
-            <div class="passwd">
-                <nya-input v-model.trim="passwd" label="密码" fullwidth type="password" placeholder="建议密码不少于4个字符" autocomplete="off" />
-            </div>
-            <nya-checkbox class="is-decode" v-model="type" label="解密" />
+            <nya-input class="mt-15" v-model.trim="passwd" label="密码" fullwidth type="password" placeholder="建议密码不少于4个字符" autocomplete="off" />
+            <nya-checkbox v-model="type" class="mt-15" label="解码" />
         </nya-container>
 
         <nya-container v-show="result" title="转换结果">
@@ -55,12 +53,3 @@ export default {
     methods: {}
 };
 </script>
-
-<style lang="scss">
-.sot1_encrypt {
-    .passwd,
-    .is-decode {
-        margin-top: 15px;
-    }
-}
-</style>

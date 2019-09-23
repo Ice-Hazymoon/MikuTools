@@ -14,10 +14,10 @@
                 <button
                     type="button"
                     class="nya-btn"
-                    :disabled="requestIn"
+                    :disabled="loading"
                     @click="addWatermark"
                 >
-                    {{ requestIn ? '处理中' : '开始处理' }}
+                    {{ loading ? '处理中' : '开始处理' }}
                 </button>
             </div>
             <nya-input
@@ -32,37 +32,37 @@
             <div class="nya-subtitle">
                 字体大小
             </div>
-            <no-ssr>
+            <client-only>
                 <vue-slider v-model="options.fontSize" lazy :min="10" :max="30" />
-            </no-ssr>
+            </client-only>
 
             <div class="nya-subtitle">
                 透明度
             </div>
-            <no-ssr>
+            <client-only>
                 <vue-slider v-model="options.alpha" lazy :min="0" :max="10" />
-            </no-ssr>
+            </client-only>
 
             <div class="nya-subtitle">
                 旋转角度
             </div>
-            <no-ssr>
+            <client-only>
                 <vue-slider v-model="options.rotate" lazy :min="0" :max="360" />
-            </no-ssr>
+            </client-only>
 
             <div class="nya-subtitle">
                 文本间距
             </div>
-            <no-ssr>
+            <client-only>
                 <vue-slider v-model="options.width" lazy :min="0" :max="100" />
-            </no-ssr>
+            </client-only>
 
             <div class="nya-subtitle">
                 文字颜色
             </div>
-            <no-ssr>
+            <client-only>
                 <compact-picker v-model="colors" @input="updateColor" />
-            </no-ssr>
+            </client-only>
 
             <div v-if="preview" class="nya-subtitle">
                 预览
@@ -106,7 +106,7 @@ export default {
             colors: '#000000',
             results: '',
             preview: '',
-            requestIn: false,
+            loading: false,
             options: {
                 fontSize: 13,
                 text: '仅供 xxx 验证使用',
@@ -156,19 +156,20 @@ export default {
             this.preview = URL.createObjectURL(this.file);
         },
         addWatermark() {
-            this.requestIn = true;
+            this.loading = true;
             domtoimage
                 .toPng(this.$refs.preview)
                 .then(e => {
                     this.results = e;
-                    this.requestIn = false;
+                    this.loading = false;
                     createDownload(e, 'watermark.png');
                 })
                 .catch(err => {
-                    this.requestIn = false;
-                    this.$modal.show('dialog', {
+                    this.loading = false;
+                    this.$swal({
+                        type: 'error',
                         title: '生成失败',
-                        text: `ERROR: ${err}`
+                        text: err
                     });
                 });
         },

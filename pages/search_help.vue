@@ -13,13 +13,13 @@
                 <button
                     type="button"
                     class="nya-btn"
-                    :disabled="requestIn"
+                    :disabled="loading"
                     @click="go"
                 >
-                    {{ requestIn ? '获取中' : '开始获取' }}
+                    {{ loading ? '获取中' : '开始获取' }}
                 </button>
             </div>
-            <nya-select v-model="type" :items="typeList" label="选择搜索引擎" />
+            <nya-select v-model="type" fullwidth class="mt-15" :items="typeList" label="选择搜索引擎" />
         </nya-container>
 
         <nya-container v-if="results" title="获取成功">
@@ -53,7 +53,7 @@ export default {
                 pornhub: 'Pornhub',
                 github: 'GitHub'
             },
-            requestIn: false
+            loading: false
         };
     },
     computed: {
@@ -65,12 +65,13 @@ export default {
     },
     methods: {
         go() {
-            if (this.requestIn) return false;
+            if (this.loading) return false;
             if (this.keyword) {
                 this.results = this.url;
             } else {
-                this.$modal.show('dialog', {
-                    title: '生成失败',
+                this.$swal({
+                    type: 'error',
+                    title: '下载失败',
                     text: `ERROR: 请输入正确的链接`
                 });
             }
@@ -78,12 +79,3 @@ export default {
     }
 };
 </script>
-
-<style lang="scss">
-.search_help {
-    .nya-select {
-        margin-top: 15px;
-        width: 100%;
-    }
-}
-</style>

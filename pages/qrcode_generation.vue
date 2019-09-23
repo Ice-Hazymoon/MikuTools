@@ -10,8 +10,8 @@
                     autofocus
                     @keyup.enter="generation"
                 />
-                <button type="button" class="nya-btn" :disabled="requestIn" @click="generation">
-                    {{ requestIn ? '获取中' : '开始获取' }}
+                <button type="button" class="nya-btn" :disabled="loading" @click="generation">
+                    {{ loading ? '获取中' : '开始获取' }}
                 </button>
             </div>
             <br>
@@ -55,7 +55,7 @@ export default {
             qrcodeText: '', // 要生成的内容
             dataUrl: '', // 生成后的图片内容
             rdata: '', // 解析后的内容
-            requestIn: false
+            loading: false
         };
     },
     methods: {
@@ -70,14 +70,15 @@ export default {
                     this.rdata = e.data;
                 })
                 .catch(() => {
-                    this.$modal.show('dialog', {
+                    this.$swal({
+                        type: 'error',
                         title: '识别失败',
                         text: `ERROR: 可能不是一个二维码，或由于二维码内容过于复杂`
                     });
                 });
         },
         generation() {
-            this.requestIn = true;
+            this.loading = true;
             this.dataUrl = '';
             this.rdata = '';
             if (this.qrcodeText) {
@@ -88,17 +89,19 @@ export default {
                     });
                     this.dataUrl =
                         `data:image/png;base64,` + QRData.toString('base64');
-                    this.requestIn = false;
+                    this.loading = false;
                 } catch (error) {
-                    this.requestIn = false;
-                    this.$modal.show('dialog', {
+                    this.loading = false;
+                    this.$swal({
+                        type: 'error',
                         title: '生成失败',
                         text: `ERROR: ${error}`
                     });
                 }
             } else {
-                this.requestIn = false;
-                this.$modal.show('dialog', {
+                this.loading = false;
+                this.$swal({
+                    type: 'error',
                     title: '生成失败',
                     text: `ERROR: 请输入内容`
                 });

@@ -2,6 +2,7 @@
     <div class="temperature_conversion">
         <nya-container title="温度单位转换">
             <nya-input
+                class="mb-15"
                 type="number"
                 autocomplete="off"
                 label="摄氏度"
@@ -12,6 +13,7 @@
             />
             <br>
             <nya-input
+                class="mb-15"
                 type="number"
                 autocomplete="off"
                 label="华氏度"
@@ -22,6 +24,7 @@
             />
             <br>
             <nya-input
+                class="mb-15"
                 type="number"
                 autocomplete="off"
                 label="开氏度"
@@ -32,6 +35,7 @@
             />
             <br>
             <nya-input
+                class="mb-15"
                 type="number"
                 autocomplete="off"
                 label="兰氏度"
@@ -42,6 +46,7 @@
             />
             <br>
             <nya-input
+                class="mb-15"
                 type="number"
                 autocomplete="off"
                 label="列氏度"
@@ -116,10 +121,3 @@ export default {
     }
 };
 </script>
-<style lang="scss">
-.temperature_conversion {
-    .nya-input {
-        margin-bottom: 15px;
-    }
-}
-</style>

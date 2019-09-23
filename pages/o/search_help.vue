@@ -70,7 +70,8 @@ export default {
             this.s = this.$route.query.s;
             this.step1();
         } else {
-            this.$modal.show('dialog', {
+            this.$swal({
+                type: 'error',
                 title: '出现错误',
                 text: `ERROR: 参数不正确`
             });

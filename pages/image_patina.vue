@@ -16,16 +16,16 @@
                     class="nya-btn"
                     @click="download"
                 >
-                    {{ requestIn ? `${(progress / iterations * 100).toFixed(0)} %` : '保存' }}
+                    {{ loading ? `${(progress / iterations * 100).toFixed(0)} %` : '保存' }}
                 </button>
             </div>
 
             <div class="nya-subtitle">
                 图片质量
             </div>
-            <no-ssr>
+            <client-only>
                 <vue-slider v-model="quality" lazy :min="0" :max="100" />
-            </no-ssr>
+            </client-only>
 
             <nya-input
                 v-model.trim="iterations"
@@ -89,7 +89,7 @@ export default {
             image: null, //图片对象
             preview: '', //预览图(处理前)
             resultsImg: '', // 结果图片
-            requestIn: false // 等待中
+            loading: false // 等待中
         };
     },
     computed: {},
@@ -145,13 +145,13 @@ export default {
             this.image.src = this.preview;
         },
         processImage() {
-            this.requestIn = true;
+            this.loading = true;
             const clamp = x => (x >= 0 ? (x <= 255 ? x : 255) : 0);
             const clampuv = x => (x >= -128 ? (x <= 127 ? x : 127) : -128);
             const canvas = document.createElement('canvas');
             const ctx = canvas.getContext('2d');
             if (this.progress == this.iterations) {
-                this.requestIn = false;
+                this.loading = false;
                 return;
             }
             ++this.progress;

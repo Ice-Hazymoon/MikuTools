@@ -23,7 +23,7 @@ tools
     .map(t => {
         return t.list;
     })
-    .map(t => {
+    .forEach(t => {
         t.forEach(n => {
             toolName.push(n.name);
         });

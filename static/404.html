@@ -5,9 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Page not found - MikuTools</title>
-    <meta http-equiv="refresh" content="0; url='https://miku.tools/'">
+    <meta http-equiv="refresh" content="3; url='/'">
+    <style>
+        body {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin: 0;
+            padding: 0;
+            -webkit-touch-callout: none;
+            -moz-user-select: none; /*火狐*/
+            -webkit-user-select: none;  /*webkit浏览器*/
+            -ms-user-select: none;   /*IE10*/
+            -khtml-user-select: none; /*早期浏览器*/
+            user-select: none;
+            background-color: #83d9c8;
+            color: #5c77ac;
+        }
+        main {
+            width: 500px;
+        }
+        * {
+            pointer-events: none;
+        }
+        main img {
+            width: 100%;
+        }
+        @media (max-width: 750px) {
+            main {
+                width: 400px;
+                max-width: 100%;
+            }
+            h1 {
+                font-size: 25px;
+            }
+        }
+        @media (max-width: 500px) {
+            main {
+                width: 300px;
+            }
+            h1 {
+                font-size: 18px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <a href="/">返回首页</a>
+    <main>
+        <img src="./404.png" alt="404">
+    </main>
+    <h1>404 页面不存在，3秒后自动跳转到首页</h1>
 </body>
 </html>

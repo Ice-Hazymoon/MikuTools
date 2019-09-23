@@ -13,6 +13,10 @@ export default {
         });
     },
     del(_this, deleteUrl) {
-        axios.get(deleteUrl).catch(() => {});
+        axios
+            .get(deleteUrl, {
+                auth: false
+            })
+            .catch(() => {});
     }
 };

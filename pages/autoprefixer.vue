@@ -1,10 +1,10 @@
 <template>
     <div class="autoprefixer">
         <nya-container title="CSS 兼容性处理">
-            <nya-input v-model.trim="cssStr" fullwidth rows="5" type="textarea" autofocus label="输入 CSS 代码开始处理" placeholder=".body{background: linear-gradient(to bottom, white, black);}" autocomplete="off" />
-            <nya-input v-model.trim="browser" fullwidth label="过滤浏览器 <a href='https://browserl.ist' target='_blank' rel='noopener noreferrer'>https://browserl.ist</a>" placeholder="last 4 version" autocomplete="off" />
-            <button type="button" class="nya-btn" :disabled="requestIn" @click="handel">
-                {{ requestIn ? '处理中' : '开始处理' }}
+            <nya-input v-model.trim="cssStr" class="mb-15" fullwidth rows="5" type="textarea" autofocus label="输入 CSS 代码开始处理" placeholder=".body{background: linear-gradient(to bottom, white, black);}" autocomplete="off" />
+            <nya-input v-model.trim="browser" class="mb-15" fullwidth label="过滤浏览器 <a href='https://browserl.ist' target='_blank' rel='noopener noreferrer'>https://browserl.ist</a>" placeholder="last 4 version" autocomplete="off" />
+            <button type="button" class="nya-btn mb-15" :disabled="loading" @click="handel">
+                {{ loading ? '处理中' : '开始处理' }}
             </button>
         </nya-container>
 
@@ -27,7 +27,7 @@ export default {
     data() {
         return {
             cssStr: '',
-            requestIn: false,
+            loading: false,
             result: '',
             browser: 'last 4 version'
         };
@@ -44,7 +44,7 @@ export default {
         handel() {
             if (this.cssStr) {
                 this.result = '';
-                this.requestIn = true;
+                this.loading = true;
                 postcss([
                     autoprefixer({
                         browsers: this.browser,
@@ -53,32 +53,25 @@ export default {
                 ])
                     .process(this.cssStr)
                     .then(compiled => {
-                        this.requestIn = false;
+                        this.loading = false;
                         this.result = compiled.css;
                     })
                     .catch(error => {
-                        this.requestIn = false;
-                        this.$modal.show('dialog', {
+                        this.loading = false;
+                        this.$swal({
+                            type: 'error',
                             title: '处理失败',
-                            text: `ERROR: ${error.toString()}`
+                            text: error.toString()
                         });
                     });
             } else {
-                this.$modal.show('dialog', {
+                this.$swal({
+                    type: 'error',
                     title: '处理失败',
-                    text: `ERROR: 请输入正确的JS代码`
+                    text: '请输入正确的JS代码'
                 });
             }
         }
     }
 };
 </script>
-
-<style lang="scss">
-.autoprefixer {
-    .nya-btn,
-    .nya-input {
-        margin-top: 15px;
-    }
-}
-</style>

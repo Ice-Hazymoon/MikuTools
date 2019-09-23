@@ -35,8 +35,8 @@ html {
     overflow-x: hidden;
     --t0: transparent;
     --theme: #249ffd;
-    --theme-success: #85f58f;
-    --theme-danger: #ff9999;
+    --theme-success: #52de97;
+    --theme-danger: #fa5477;
     --theme-info: #9ed0ff;
     --theme-wrning: #ffdd98;
     --border-color: #DCDEE0;
@@ -106,13 +106,16 @@ body {
     width: 100vw;
     overflow: hidden;
     background-color: #f4f8fb;
+    color: var(--t1);
 }
 
 a {
     color: #0366d6;
     word-break: break-all;
     text-decoration: none;
-    cursor: alias;
+    a[target="_blank"] {
+        cursor: alias;
+    }
 
     &:hover {
         text-decoration: underline;
@@ -196,7 +199,7 @@ hr {
             }
         }
     }
-    .nya-container{
+    .nya-container {
         background-color: #282c34;
         &.transparent{
             background-color: rgba($color: #282c34, $alpha: .65);
@@ -303,6 +306,11 @@ a.nya-btn{
     transition: border-color .2s ease, color .2s ease;
     letter-spacing: 1px;
 
+    &.is-smail {
+        font-size: 14px;
+        padding: 4px 10px;
+    }
+
     &:active, &.active {
         background-color: var(--theme);
         color: #fff;
@@ -407,4 +415,8 @@ fieldset {
 
 .mr-15 {
     margin-right: 15px;
+}
+
+img {
+    max-width: 100%;
 }

@@ -64,9 +64,9 @@
         </style>
         <!-- 自定义JS -->
         <script v-if="$store.state.setting.js" type="text/javascript" charset="utf-8" v-text="$store.state.setting.js"></script>
-        <no-ssr>
+        <client-only>
             <Dialog scrollable :click-to-close="false" />
-        </no-ssr>
+        </client-only>
         <div v-show="$store.state.globalLoading" class="view-loading">
             <nya-loading />
         </div>

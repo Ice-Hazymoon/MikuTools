@@ -68,7 +68,8 @@ export default {
         },
         hide(path) {
             if (['/hide_tool', '/links'].includes(path)) {
-                this.$modal.show('dialog', {
+                this.$swal({
+                    type: 'error',
                     title: '操作失败',
                     text: `ERROR: 该项目无法隐藏`
                 });
