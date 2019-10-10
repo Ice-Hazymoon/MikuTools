@@ -175,6 +175,14 @@ export const state = () => {
             icon: 'image-outline',
             list: [
                 {
+                    name: 'Anime 4K',
+                    path: '/anime4k',
+                    head: {
+                        keywords: ['anime'],
+                        description: '3毫秒放大你老婆，支持视频/图片。'
+                    }
+                },
+                {
                     name: 'Cyberpunk 2077 图片制作',
                     path: '/cyberpunk2077',
                     head: {
