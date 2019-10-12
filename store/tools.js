@@ -5,6 +5,14 @@ export const state = () => {
             icon: 'layers-outline',
             list: [
                 {
+                    name: '屏幕录制',
+                    path: '/screen_record',
+                    head: {
+                        keywords: ['屏幕录制', '在线录屏'],
+                        description: '在网页上完成录屏'
+                    }
+                },
+                {
                     name: '番茄时钟',
                     path: '/pomodoro_technique',
                     head: {
