@@ -183,6 +183,14 @@ export const state = () => {
             icon: 'image-outline',
             list: [
                 {
+                    name: '九宫格切图',
+                    path: '/img_jiugongge',
+                    head: {
+                        keywords: ['图片九宫格', '九宫格切图', '九宫格'],
+                        description: '图片分割成九宫格'
+                    }
+                },
+                {
                     name: 'Anime 4K',
                     path: '/anime4k',
                     head: {
