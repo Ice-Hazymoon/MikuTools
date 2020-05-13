@@ -17,7 +17,7 @@
         <div class="dialog-content">
             <div v-if="params.title" class="dialog-c-title" v-text="params.title || ''"></div>
             <component :is="params.component" v-if="params.component" v-bind="params.props" />
-            <div v-else class="dialog-c-text" v-html="params.text || ''"></div>
+            <Dynamic v-else :template="params.text || ''" />
         </div>
         <div v-if="buttons" class="vue-dialog-buttons">
             <button
@@ -36,8 +36,12 @@
     </modal>
 </template>
 <script>
+import Dynamic from './Dynamic';
 export default {
     name: 'VueJsDialog',
+    components: {
+        Dynamic
+    },
     inheritAttrs: false,
     props: {
         width: {
@@ -130,9 +134,6 @@ export default {
 .vue-dialog .dialog-c-title {
     font-weight: 600;
     padding-bottom: 15px;
-}
-
-.vue-dialog .dialog-c-text {
 }
 
 .vue-dialog .vue-dialog-buttons {

@@ -5,7 +5,7 @@
                 <div class="title">
                     {{ command }} 命令详情
                 </div>
-                <div class="content typo" v-html="content"></div>
+                <Dynamic class="content typo" :template="content" />
                 <div class="close-modal" @click="$modal.hide('readCommand')">
                     关闭
                 </div>
@@ -35,7 +35,7 @@
                 {{ results }}
             </a>
         </nya-container>
-        
+
         <nya-container title="说明">
             <ul class="nya-list">
                 <li>
@@ -52,8 +52,12 @@
 <script>
 import dayjs from 'dayjs';
 import md from '~/utils/markdown.js';
+import Dynamic from '@/components/Dynamic';
 export default {
     name: 'LinuxCommand',
+    components: {
+        Dynamic
+    },
     head() {
         return this.$store.state.currentTool.head;
     },

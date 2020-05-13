@@ -6,13 +6,14 @@
                 {{ showCode ? '隐藏' : '显示' }} HTML 代码
             </button>
             <div v-if="showCode" class="quill-code">
-                <code class="hljs xml" v-html="contentCode"></code>
+                <Dynamic class="hljs xml" tag="code" :template="contentCode" />
             </div>
         </client-only>
     </div>
 </template>
 
 <script>
+import Dynamic from '@/components/Dynamic';
 import 'quill/dist/quill.core.css';
 import 'quill/dist/quill.snow.css';
 import 'quill/dist/quill.bubble.css';
@@ -28,7 +29,8 @@ export default {
         return this.$store.state.currentTool.head;
     },
     components: {
-        quillEditor
+        quillEditor,
+        Dynamic
     },
     data() {
         return {
