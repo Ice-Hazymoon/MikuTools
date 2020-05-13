@@ -1,0 +1,20 @@
+image:
+  file: .gitpod.Dockerfile
+
+ports:
+  - port: 3000
+    onOpen: open-preview
+  - port: 3001
+    onOpen: ignore
+tasks:
+  - init: yarn install
+    command: yarn dev
+  - command: echo split
+    openMode: split-right
+    name: split terminal
+vscode:
+  extensions:
+    - octref.vetur@0.23.0:TEzauMObB6f3i2JqlvrOpA==
+    - esbenp.prettier-vscode@4.6.0:3ul2z2dsx8yqcbS8VovpnQ==
+    - dbaeumer.vscode-eslint@2.1.5:9Wg0Glx/TwD8ElFBg+FKcQ==
+    - EditorConfig.EditorConfig@0.14.5:DTIJHHNrM36zsvYRBOY3ow==
