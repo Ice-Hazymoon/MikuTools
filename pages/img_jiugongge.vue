@@ -130,6 +130,7 @@ export default {
     .results {
         display: grid;
         grid-gap: 1px;
+        max-width: 100%;
     }
 }
 </style>
