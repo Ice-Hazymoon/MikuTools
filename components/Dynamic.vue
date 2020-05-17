@@ -1,5 +1,7 @@
 <script>
 import Vue from 'vue/dist/vue.common';
+import DOMPurify from 'dompurify';
+
 export default {
     props: {
         template: {
@@ -18,13 +20,18 @@ export default {
             templateRender: null
         };
     },
+    computed: {
+        cleanTemplate() {
+            return DOMPurify.sanitize(this.template);
+        }
+    },
     watch: {
-        template: {
+        cleanTemplate: {
             immediate: true,
             handler() {
                 if (process.client) {
                     const res = Vue.compile(
-                        `<${this.tag}>${this.template}</${this.tag}>`
+                        `<${this.tag}>${this.cleanTemplate}</${this.tag}>`
                     );
                     this.templateRender = res.render;
                     this.$options.staticRenderFns = [];
