@@ -1,6 +1,6 @@
 <template>
     <div class="nya-input" :class="{ 'fullwidth': fullwidth }">
-        <label v-if="label" class="input-title" :for="id" v-html="label"></label>
+        <Dynamic v-if="label" class="input-title" tag="label" :for="id" :template="label" />
         <div v-if="type === 'file'" class="input-file">
             <input
                 :id="id"
@@ -45,8 +45,13 @@
 </template>
 
 <script>
+import Dynamic from '@/components/Dynamic';
+
 export default {
     name: 'NyaInput',
+    components: {
+        Dynamic
+    },
     inheritAttrs: false,
     props: {
         autofocus: {

@@ -12,14 +12,18 @@
         </nya-container>
 
         <nya-container v-if="results.length" title="结果">
-            <div v-html="results.join(br ? '<br>' : '\n')"></div>
+            <Dynamic :template="results.join(br ? '<br>' : '\n')" />
         </nya-container>
     </div>
 </template>
 
 <script>
+import Dynamic from '@/components/Dynamic';
 export default {
     name: 'Random',
+    components: {
+        Dynamic
+    },
     head() {
         return this.$store.state.currentTool.head;
     },

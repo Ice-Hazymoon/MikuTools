@@ -36,13 +36,34 @@
 <script>
 export default {
     props: {
-        width: [Number, String], // 圆的大小
-        radius: [Number, String], // 进度条厚度
-        fontSize: [Number, String], // 字体大小
-        fontColor: String, // 字体颜色
-        progress: [Number, String], // 进度条百分比
-        barColor: String, // 进度条颜色
-        backgroundColor: String, // 背景颜色
+        width: {
+            type: [Number, String],
+            default: 250
+        }, // 圆的大小
+        radius: {
+            type: [Number, String],
+            default: 20
+        }, // 进度条厚度
+        fontSize: {
+            type: [Number, String],
+            default: 50
+        }, // 字体大小
+        fontColor: {
+            type: String,
+            default: '#fff'
+        }, // 字体颜色
+        progress: {
+            type: [Number, String],
+            default: 0
+        }, // 进度条百分比
+        barColor: {
+            type: String,
+            default: '#fff'
+        }, // 进度条颜色
+        backgroundColor: {
+            type: String,
+            default: 'rgba(255, 255, 255, 0.2)'
+        }, // 背景颜色
         isRound: {
             // 是否是圆形画笔
             type: Boolean,

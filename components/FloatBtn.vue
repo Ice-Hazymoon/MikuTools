@@ -21,7 +21,7 @@
                 <div class="title">
                     将以下代码放到你的网页中
                 </div>
-                <pre v-html="iframeText"></pre>
+                <Dynamic tag="pre" :template="iframeText" />
             </modal>
             <modal class="pay" name="pay" height="auto" width="300" reset adaptive>
                 <div class="title">
@@ -58,8 +58,13 @@
 <script>
 import QR from 'qr-image';
 import _ from 'lodash';
+import Dynamic from './Dynamic';
+
 export default {
     name: 'FloatBtn',
+    components: {
+        Dynamic
+    },
     data() {
         return {
             qrcodeUrl: ''

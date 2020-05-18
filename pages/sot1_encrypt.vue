@@ -11,7 +11,7 @@
                 rows="5"
                 type="textarea"
             />
-            <nya-input class="mt-15" v-model.trim="passwd" label="密码" fullwidth type="password" placeholder="建议密码不少于4个字符" autocomplete="off" />
+            <nya-input v-model.trim="passwd" class="mt-15" label="密码" fullwidth type="password" placeholder="建议密码不少于4个字符" autocomplete="off" />
             <nya-checkbox v-model="type" class="mt-15" label="解码" />
         </nya-container>
 
