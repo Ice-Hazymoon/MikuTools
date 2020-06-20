@@ -67,4 +67,4 @@ A: Vue 全家桶 + [Nuxt.js](https://zh.nuxtjs.org/)
 
 ## License
 
-[MIT](https://github.com/classeur/markdown-it-mathjax/blob/master/LICENSE)
+[MIT](https://github.com/Ice-Hazymoon/MikuTools/blob/master/LICENSE)
