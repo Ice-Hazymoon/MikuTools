@@ -1,6 +1,6 @@
 <script>
 import Vue from 'vue/dist/vue.common';
-import DOMPurify from 'dompurify';
+import DOMPurify from 'isomorphic-dompurify';
 
 export default {
     props: {
