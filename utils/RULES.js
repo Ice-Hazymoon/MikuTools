@@ -1,18 +1,47 @@
 module.exports = [
     {
+        title: '必须带端口号的网址(或ip)',
+        rule: /^(((ht|f)tps?):\/\/)?[\w-]+(\.[\w-]+)+:\d{0,5}\/?/,
+        examples: [
+            'https://www.qq.com:8080',
+            '127.0.0.1:5050',
+            'baidu.com:8001',
+            'http://192.168.1.1:9090'
+        ],
+        counterExamples: ['192.168.1.1', 'https://www.jd.com']
+    },
+    {
+        title: '网址(支持端口和"?+参数"和"#+参数)',
+        rule: /^(((ht|f)tps?):\/\/)?[\w-]+(\.[\w-]+)+([\w\-.,@?^=%&:/~+#]*[\w\-@?^=%&/~+#])?$/,
+        examples: [
+            'www.qq.com',
+            'https://baidu.com',
+            '360.com:8080/vue/#/a=1&b=2'
+        ],
+        counterExamples: ['....']
+    },
+    {
+        title: '统一社会信用代码',
+        rule: /^[0-9A-HJ-NPQRTUWXY]{2}\d{6}[0-9A-HJ-NPQRTUWXY]{10}$/,
+        examples: ['91230184MA1BUFLT44', '92371000MA3MXH0E3W']
+    },
+
+    {
         title: '迅雷链接',
-        rule: /^thunder:\/\/[a-zA-Z0-9]+=$/,
+        rule: /^thunderx?:\/\/[a-zA-Z\d]+=$/,
         examples: [
             'thunder://QUEsICdtYWduZXQ6P3h0PXVybjpidGloOjBCQTE0RTUxRkUwNjU1RjE0Qzc4NjE4RjY4NDY0QjZFNTEyNjcyOUMnWlo='
         ]
     },
+
     {
         title: 'ed2k链接(宽松匹配)',
-        rule: /^ed2k:\/\/|file|.+|\/$/,
+        rule: /^ed2k:\/\/\|file\|.+\|\/$/,
         examples: [
             'ed2k://|file|%E5%AF%84%E7%94%9F%E8%99%AB.PARASITE.2019.HD-1080p.X264.AAC-UUMp4(ED2000.COM).mp4|2501554832|C0B93E0879C6071CBED732C20CE577A3|h=5HTKZPQFYRKORN52I3M7GQ4QQCIHFIBV|/'
         ]
     },
+
     {
         title: '磁力链接(宽松匹配)',
         rule: /^magnet:\?xt=urn:btih:[0-9a-fA-F]{40,}.*$/,
@@ -111,9 +140,10 @@ module.exports = [
         examples: [0.99, 8.99, 666]
     },
     {
-        title: '银行卡号（16或19位）',
-        rule: /^(?:[1-9]{1})(?:\d{15}|\d{18})$/,
-        examples: [6222026006705354217]
+        title:
+            '银行卡号（10到30位, 覆盖对公/私账户, 参考[微信支付](https://pay.weixin.qq.com/wiki/doc/api/xiaowei.php?chapter=22_1)）',
+        rule: /^[1-9]\d{9,29}$/,
+        examples: [6234567890, 6222026006705354217]
     },
     {
         title: '中文姓名',
@@ -139,11 +169,6 @@ module.exports = [
         title: '车牌号(新能源+非新能源)',
         rule: /^(?:[京津沪渝冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤青藏川宁琼使领 A-Z]{1}[A-HJ-NP-Z]{1}(?:(?:[0-9]{5}[DF])|(?:[DF](?:[A-HJ-NP-Z0-9])[0-9]{4})))|(?:[京津沪渝冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤青藏川宁琼使领 A-Z]{1}[A-Z]{1}[A-HJ-NP-Z0-9]{4}[A-HJ-NP-Z0-9 挂学警港澳]{1})$/,
         examples: ['京A12345D', '京A00599']
-    },
-    {
-        title: '网址',
-        rule: /^(?:(?:https?|ftp):\/\/)?(?:[\da-z.-]+)\.(?:[a-z.]{2,6})(?:\/\w\.-]*)*\/?/,
-        examples: ['www.qq.com']
     },
     {
         title: '中国手机号(严谨), 根据工信部2019年最新公布的手机号段',
