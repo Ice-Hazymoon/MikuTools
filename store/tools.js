@@ -306,6 +306,14 @@ export const state = () => {
             icon: 'text-outline',
             list: [
                 {
+                    name: '文本对比',
+                    path: '/textdiff',
+                    head: {
+                        keywords: ['文本对比', '代码对比'],
+                        description: '文本在线对比'
+                    }
+                },
+                {
                     name: '文本去重',
                     path: '/remove_duplicate',
                     head: {

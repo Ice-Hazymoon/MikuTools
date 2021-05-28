@@ -23,6 +23,8 @@
     "console.style": "^0.2.2",
     "crypto-js": "^3.1.9-1",
     "dayjs": "^1.8.16",
+    "diff": "^5.0.0",
+    "diff2html": "^3.4.4",
     "dom-to-image": "^2.6.0",
     "eva-icons": "^1.1.1",
     "fabric": "^3.4.0",
