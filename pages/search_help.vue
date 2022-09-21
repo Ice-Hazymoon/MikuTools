@@ -60,7 +60,7 @@ export default {
         url() {
             return `${process.env.url}/o/search_help?s=${
                 this.type
-            }&k=${encodeURIComponent(this.keyword)}`;
+            }&k=${Buffer.from(this.keyword).toString('base64')}`;
         }
     },
     methods: {

@@ -54,8 +54,8 @@ export default {
     },
     computed: {
         url() {
-            let k = this.$route.query.k;
-            let s = this.$route.query.s;
+            let s = this.s;
+            let k = encodeURIComponent(this.k);
             if (s === 'github') return `https://github.com/search?q=${k}`;
             if (s === 'google') return `https://www.google.com/search?q=${k}`;
             if (s === 'baidu') return `https://www.baidu.com/s?wd=${k}`;
@@ -66,7 +66,7 @@ export default {
     },
     mounted() {
         if (this.$route.query.s && this.$route.query.k) {
-            this.k = this.$route.query.k;
+            this.k = Buffer.from(this.$route.query.k, 'base64').toString();
             this.s = this.$route.query.s;
             this.step1();
         } else {
