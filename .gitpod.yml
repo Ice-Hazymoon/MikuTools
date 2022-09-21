@@ -7,8 +7,8 @@ ports:
   - port: 3001
     onOpen: ignore
 tasks:
-  - init: yarn install
-    command: yarn dev
+  - init: pnpm install
+    command: pnpm dev
   - command: echo split
     openMode: split-right
     name: split terminal
