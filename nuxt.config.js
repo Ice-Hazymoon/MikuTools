@@ -4,7 +4,6 @@ import env from './env';
 import keywords from './keywords';
 
 module.exports = {
-    mode: 'universal',
     env: env,
     server: {
         // https:
@@ -19,6 +18,7 @@ module.exports = {
         //           }
         //         : undefined
     },
+    serverMiddleware: ['~/server-middleware/headers'],
 
     /*
      ** Headers of the page

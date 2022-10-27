@@ -4,7 +4,7 @@
             {{ label }}
         </label>
         <div class="select">
-            <select :id="id" v-bind="$attrs" @input="$emit('input', $event.target.value)" @change="$emit('change')">
+            <select :disabled="disabled" :id="id" v-bind="$attrs" @input="$emit('input', $event.target.value)" @change="$emit('change')">
                 <option v-for="(item, index) in items" :key="index" :value="index">
                     {{ item }}
                 </option>
@@ -29,6 +29,10 @@ export default {
             type: String
         },
         fullwidth: {
+            default: false,
+            type: Boolean
+        },
+        disabled: {
             default: false,
             type: Boolean
         }
