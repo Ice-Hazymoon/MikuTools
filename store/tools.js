@@ -183,6 +183,14 @@ export const state = () => {
             icon: 'image-outline',
             list: [
                 {
+                    name: '格式转换',
+                    path: '/ffmpeg',
+                    head: {
+                        keywords: ['格式转换'],
+                        description: 'ffmpeg 格式转换'
+                    }
+                },
+                {
                     name: '九宫格切图',
                     path: '/img_jiugongge',
                     head: {
