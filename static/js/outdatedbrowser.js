@@ -113,3 +113,7 @@ if (false === supportsPromise) {
         languagePath: '/outdatedbrowser.html'
     })
 }
+
+if (window.location.host === 'imiku.netlify.app') {
+    prompt('您正在浏览开源版本，你可以在这里查看官方版本', 'https://tools.miku.ac')
+}
