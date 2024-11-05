@@ -175,7 +175,20 @@ export const state = () => {
                         ],
                         description: '身份证号码查询/生成'
                     }
+                },
+
+                {
+                    name: '时区转换器',
+                    path: '/time_change',
+                    head: {
+                        keywords: [
+                            '时区转换器',
+                            '时区'
+                        ],
+                        description: '时区转换'
+                    }
                 }
+
             ]
         },
         {
